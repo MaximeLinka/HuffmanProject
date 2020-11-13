@@ -24,12 +24,24 @@
     <ClCompile Include="src\linkedlist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\huffman_tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Desktop\huffman_tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\linkedlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\huffman_tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Desktop\huffman_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,6 +22,8 @@ void removeElement(char c);
 
 void sortElementByOccurenceDescendent(Element** e);
 
+Element* minElement(Element* e);
+
 // Specific functions
 Element* createOccurenceList(char* string, size_t strlength); // Answers Part 2 - Question C
 

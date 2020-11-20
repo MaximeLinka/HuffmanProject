@@ -83,6 +83,21 @@ void sortElementByOccurenceDescendent(Element** e)
 	}
 }
 
+Element* minElement(Element* e)
+{
+	Element* min = e;
+	Element* temp = e;
+
+	while (temp != NULL)
+	{
+		if (temp->occurences < min->occurences)
+			min = temp;
+		temp = temp->next;
+	}
+	return min;
+}
+
+
 // Specific functions
 Element* createOccurenceList(char* string, size_t strlength) //TODO: remove strlength from api
 {

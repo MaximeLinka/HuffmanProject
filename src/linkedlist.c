@@ -58,8 +58,33 @@ void appendElement(Element** e, char c)
 
 void removeElement(char c);
 
+void sortElementByOccurenceDescendent(Element** e)
+{
+	Element* temp1 = *e;
+
+	while(temp1 != NULL)
+	{
+		Element* temp2 = temp1->next;
+		while (temp2 != NULL)
+		{
+			if (temp1->occurences < temp2->occurences)
+			{
+				// swap
+				char temp_char = temp1->character;
+				size_t temp_occurences = temp1->occurences;
+				temp1->character = temp2->character;
+				temp1->occurences = temp2->occurences;
+				temp2->character = temp_char;
+				temp2->occurences = temp_occurences;
+			}
+			temp2 = temp2->next;
+		}
+		temp1 = temp1->next;
+	}
+}
+
 // Specific functions
-Element* createOccurenceList(char* string, size_t strlength)
+Element* createOccurenceList(char* string, size_t strlength) //TODO: remove strlength from api
 {
 	Element* map = createElement(string[0]);
 

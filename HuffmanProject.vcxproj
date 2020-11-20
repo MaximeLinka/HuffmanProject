@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\huffman_tree.c" />
     <ClCompile Include="src\linkedlist.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\utils.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\huffman_tree.h" />
     <ClInclude Include="src\linkedlist.h" />
     <ClInclude Include="src\utils.h" />
   </ItemGroup>

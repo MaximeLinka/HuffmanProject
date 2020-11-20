@@ -20,6 +20,8 @@ int containsElement(Element* e, char c);
 void appendElement(Element** e, char c);
 void removeElement(char c);
 
+void sortElementByOccurenceDescendent(Element** e);
+
 // Specific functions
 Element* createOccurenceList(char* string, size_t strlength); // Answers Part 2 - Question C
 

@@ -15,6 +15,7 @@ int main()
 	stringFileToBinary(INPUT_FILE, OUTPUT_FILE);
 	puts("The transfer was successfull !");
 
+
 	printf("The input file was %d characters large.\n", getFileLength(INPUT_FILE));
 	printf("The output file was %d characters large.\n", getFileLength(OUTPUT_FILE));
 
@@ -26,7 +27,10 @@ int main()
 	sortElementByOccurenceDescendent(&list);
 	printElement(list);
 
-	freeElement(list);
+	Node* tree = convert_list_to_tree(list, 4);
+	print_tree(tree);
+	free_tree(tree);
+
 
 	return 0;
 }

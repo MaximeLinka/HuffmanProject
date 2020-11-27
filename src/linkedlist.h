@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
@@ -9,6 +9,8 @@ typedef struct Element
 	size_t occurences;
 	struct Element* next;
 } Element;
+
+
 
 // Basic functions
 Element* createElement(char c);
@@ -26,5 +28,6 @@ Element* minElement(Element* e);
 
 // Specific functions
 Element* createOccurenceList(char* string, size_t strlength); // Answers Part 2 - Question C
+void remove_list(Element** l, Element* disposable);
 
 #endif

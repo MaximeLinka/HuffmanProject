@@ -87,3 +87,35 @@ Element* createOccurenceList(char* string, size_t strlength)
 
 	return map;
 }
+
+void remove_list(Element** l, Element * disposable)
+{
+	if ((*l)!= NULL)
+	{
+		Element* temp = (*l);
+		Element* copy;
+		if (temp == disposable)
+		{
+			(*l) = temp->next;
+			free(temp);
+		}
+			
+		else
+		{
+			while (temp->next != NULL && temp->next != disposable)
+			{
+				temp = temp->next;
+			}
+			if (temp->next == disposable)
+			{
+				copy = temp->next;
+				temp->next = temp->next->next;
+				free(copy);
+			}
+		}
+	}
+}
+
+
+
+

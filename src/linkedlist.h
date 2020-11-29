@@ -10,6 +10,8 @@ typedef struct Element
 	struct Element* next;
 } Element;
 
+typedef Element* List;
+
 // Basic functions
 Element* createElement(char c);
 void freeElement(Element* e);

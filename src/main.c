@@ -7,6 +7,7 @@
 
 #define INPUT_FILE "assets/input.txt"
 #define OUTPUT_FILE "assets/output.txt"
+#define DICO "assets/dico.txt"
 
 int main()
 {
@@ -30,6 +31,12 @@ int main()
 	Node* tree = convert_list_to_tree(list, 4);
 	print_tree(tree);
 	free_tree(tree);
+
+	char* name_file = DICO;
+	Stack* s = create_stack();
+	FILE* dico = fopen(DICO, "w+");
+	read_tree_dico(tree, name_file, s, 2);
+	fclose(dico);
 
 
 	return 0;

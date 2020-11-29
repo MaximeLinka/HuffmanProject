@@ -100,3 +100,72 @@ Node* convert_list_to_tree(Element* l, int occurences)
     free_list_node(temp);
     return tree;
 }
+
+
+Stack* create_stack() {
+    Stack* newStack = (Stack*)malloc(sizeof(Stack));
+    newStack->values_of_stack = NULL;
+    return newStack;
+}
+
+int is_empty(Stack* s)
+{
+    if (s->values_of_stack == NULL) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+void push(Stack* s, int val) {
+    List element = (List)malloc(sizeof(Element));
+    element->occurences = val;
+    element->character = '\0';
+    element->next = s->values_of_stack;
+    s->values_of_stack = element;
+}
+
+int pop(Stack* s) {
+    if (is_empty(s) == 1) {
+        return -1;
+    }
+    else {
+        Element* old = s->values_of_stack;
+        s->values_of_stack = s->values_of_stack->next;
+        int temp = old->occurences;
+        free(old);
+        return temp;
+    }
+}
+
+
+
+void list_read_backwards(Element* l, FILE* dico) {
+    if (l != NULL) {
+        list_read_backwards(l->next, dico);
+        fprintf(dico, "%d", l->occurences);
+    }
+}
+
+void read_tree_dico(Node* tree, char* name_file, Stack* s, int index,FILE* dico)
+{
+    if (index == 0 || index == 1)//the way to access info gives the bits associated
+    {
+        push(s, index);
+    }
+    if (tree->left == NULL && tree->right == NULL)//if we have a leaf
+    {
+        if (tree->letter != '\0' && tree->letter != ' ' )//the leaf must have a letter
+        {
+            Element* temp = s->values_of_stack;
+            fprintf(dico, "%c : ", tree->letter);
+            list_read_backwards(temp, dico);
+        }
+        int delete = pop(s);
+    }
+    else {
+        read_tree_dico(tree->left, name_file, s, 0,dico);
+        read_tree_dico(tree->right, name_file, s, 1,dico);
+    }
+}

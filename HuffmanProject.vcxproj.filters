@@ -27,7 +27,7 @@
     <ClCompile Include="src\huffman_tree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Desktop\huffman_tree.c">
+    <ClCompile Include="D:\Document\Cours Efrei\L2\Intro software ingineering\Huffmanproject\huffman_tree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,10 +38,7 @@
     <ClInclude Include="src\linkedlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\huffman_tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Desktop\huffman_tree.h">
+    <ClInclude Include="D:\Document\Cours Efrei\L2\Intro software ingineering\Huffmanproject\huffman_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

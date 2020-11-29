@@ -139,15 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Desktop\huffman_tree.c" />
+    <ClCompile Include="D:\Document\Cours Efrei\L2\Intro software ingineering\Huffmanproject\huffman_tree.c" />
     <ClCompile Include="src\huffman_tree.c" />
     <ClCompile Include="src\linkedlist.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\utils.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Desktop\huffman_tree.h" />
-    <ClInclude Include="src\huffman_tree.h" />
+    <ClInclude Include="D:\Document\Cours Efrei\L2\Intro software ingineering\Huffmanproject\huffman_tree.h" />
     <ClInclude Include="src\linkedlist.h" />
     <ClInclude Include="src\utils.h" />
   </ItemGroup>

@@ -2,12 +2,12 @@
 #include <string.h>
 
 #include "utils.h"
-#include "linkedlist.h"
+#include "DataStructures/linkedlist.h"
 #include "huffman_tree.h"
 
 #define INPUT_FILE "assets/input.txt"
 #define OUTPUT_FILE "assets/output.txt"
-#define DICO "assets/dico.txt"
+#define DICO_FILE "assets/dico.txt"
 
 int main()
 {
@@ -16,27 +16,26 @@ int main()
 	stringFileToBinary(INPUT_FILE, OUTPUT_FILE);
 	puts("The transfer was successfull !");
 
-
 	printf("The input file was %d characters large.\n", getFileLength(INPUT_FILE));
 	printf("The output file was %d characters large.\n", getFileLength(OUTPUT_FILE));
 
-	Element* list = createOccurenceList("bonsoir mdrr", 12);
-	printElement(list);
+	LinkedList list = createOccurenceList("bonsoir mdrr", 12);
+	printLinkedList(list);
 
 	puts("After sorting !");
 
-	sortElementByOccurenceDescendent(&list);
-	printElement(list);
+	sortLinkedListByOccurenceDescendent(&list);
+	printLinkedList(list);
 
-	Node* tree = convert_list_to_tree(list, 4);
-	print_tree(tree);
-	free_tree(tree);
+	HuffmanTree tree = buildHuffmanTree(list, 4);
+	printHuffmanTree(tree);
 
-	char* name_file = DICO;
-	Stack* s = create_stack();
-	FILE* dico = fopen(DICO, "w+");
-	read_tree_dico(tree, name_file, s, 2);
+	Stack* s = createStack();
+	FILE* dico = fopen(DICO_FILE, "w+");
+	read_tree_dico(tree, DICO_FILE, s, 2, dico);
 	fclose(dico);
+
+	freeHuffmanTree(tree);
 
 
 	return 0;

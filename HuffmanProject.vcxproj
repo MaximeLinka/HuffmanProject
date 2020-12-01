@@ -139,14 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DataStructures\stack.c" />
     <ClCompile Include="src\huffman_tree.c" />
-    <ClCompile Include="src\linkedlist.c" />
+    <ClCompile Include="src\DataStructures\linkedlist.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\utils.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DataStructures\stack.h" />
     <ClInclude Include="src\huffman_tree.h" />
-    <ClInclude Include="src\linkedlist.h" />
+    <ClInclude Include="src\DataStructures\linkedlist.h" />
     <ClInclude Include="src\utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

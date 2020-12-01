@@ -1,145 +1,105 @@
 #include "huffman_tree.h"
 
 
-
-
-Node* create_node(int val, char letter) {
+Node* createNode(int value, char letter) {
     Node* tree = (Node*)malloc(sizeof(Node));
-    tree->occurence = val;
+    tree->occurence = value;
+    tree->letter = letter;
     tree->left = NULL;
     tree->right = NULL;
-    tree->letter = letter;
     return tree;
 }
 
-Node* create_link(Node* current_node, Node * leaf)//right - left
+Node* createLink(Node* current_node, Node * leaf)   //right - left
 {
-    Node* temp = create_node(current_node->occurence + leaf->occurence, '\0');
+    Node* temp = createNode(current_node->occurence + leaf->occurence, '\0');
     temp->left = leaf;
     temp->right = current_node;
     return temp;
 }
 
-void print_tree(Node * tree) {
+void printHuffmanTree(Node * tree) {
     if (tree != NULL) {
         printf("%d : %c \n", tree->occurence, tree->letter);
-        print_tree(tree->left);
-        print_tree(tree->right);
+        printHuffmanTree(tree->left);
+        printHuffmanTree(tree->right);
     }
 }
 
-void free_tree(Node* tree) {
+void freeHuffmanTree(Node* tree) {
     if (tree != NULL)
     {
-        free_tree(tree->left);
-        free_tree(tree->right);
+        freeHuffmanTree(tree->left);
+        freeHuffmanTree(tree->right);
         free(tree);
     }
-
-
 }
 
-
-listNode* convert_list_to_listofnodes(Element* l)
+NodeLinkedList occurenceListToNodeList(LinkedList l)
 {
-    Element* temp = minElement(l);
-    listNode* tree = (listNode*)malloc(sizeof(listNode));
-    tree->node = create_node(temp->occurences, temp->character);
-    listNode* temp_node = tree;
+    Element* temp = minLinkedList(l);
+    NodeLinkedList tree = (NodeLinkedList)malloc(sizeof(NodeElement));
+    tree->data = createNode(temp->occurences, temp->character);
+    NodeLinkedList temp_node = tree;
     remove_list(&l, temp);
-    temp = minElement(l);
+    temp = minLinkedList(l);
+    
     while (temp)
     {
-        temp_node->next = (listNode*)malloc(sizeof(listNode));
-        temp_node->next->node = create_node(temp->occurences, temp->character);
+        temp_node->next = (NodeLinkedList)malloc(sizeof(NodeElement));
+        temp_node->next->data = createNode(temp->occurences, temp->character);
         remove_list(&l, temp);
-        temp = minElement(l);
+        temp = minLinkedList(l);
         temp_node = temp_node->next;
     }
+
     temp_node->next = NULL;
     return tree;
 }
-void free_list_node(listNode * node)
+
+void freeNodeLinkedList(NodeLinkedList list)
 {
-    listNode* old = node;
-    while (node != NULL)
+    NodeLinkedList old = list;
+    while (list != NULL)
     {
-        old = node;
-        node = node->next;
+        old = list;
+        list = list->next;
         free(old);
     }
 }
 
-Node* convert_list_to_tree(Element* l, int occurences)
+HuffmanTree buildHuffmanTree(LinkedList l, int occurences)
 {
-    
-    Node* tree = NULL;
+    HuffmanTree tree = NULL;
     Node* current_node = NULL;
-    listNode* temp = convert_list_to_listofnodes(l);//organizes list into list of nodes
+    NodeLinkedList temp = occurenceListToNodeList(l); //organizes list into list of nodes
+
     if (temp != NULL)
     {
         if (temp->next == NULL)//case where we have one node
         {
-            tree = create_node(temp->node->occurence, '\0');
-            tree->left = temp->node;
+            tree = createNode(temp->data->occurence, '\0');
+            tree->left = temp->data;
 
         }
         else
         {
-            current_node = create_link(temp->node, temp->next->node);
+            current_node = createLink(temp->data, temp->next->data);
             temp = temp->next->next;
         }
 
     }
+
     while (temp != NULL)
     {
-        current_node = create_link(current_node, temp->node);
+        current_node = createLink(current_node, temp->data);
         temp = temp->next;
     }
+
     tree = current_node;
-    free_list_node(temp);
+    freeNodeLinkedList(temp);
     return tree;
 }
-
-
-Stack* create_stack() {
-    Stack* newStack = (Stack*)malloc(sizeof(Stack));
-    newStack->values_of_stack = NULL;
-    return newStack;
-}
-
-int is_empty(Stack* s)
-{
-    if (s->values_of_stack == NULL) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
-}
-
-void push(Stack* s, int val) {
-    List element = (List)malloc(sizeof(Element));
-    element->occurences = val;
-    element->character = '\0';
-    element->next = s->values_of_stack;
-    s->values_of_stack = element;
-}
-
-int pop(Stack* s) {
-    if (is_empty(s) == 1) {
-        return -1;
-    }
-    else {
-        Element* old = s->values_of_stack;
-        s->values_of_stack = s->values_of_stack->next;
-        int temp = old->occurences;
-        free(old);
-        return temp;
-    }
-}
-
-
 
 void list_read_backwards(Element* l, FILE* dico) {
     if (l != NULL) {
@@ -148,21 +108,21 @@ void list_read_backwards(Element* l, FILE* dico) {
     }
 }
 
-void read_tree_dico(Node* tree, char* name_file, Stack* s, int index,FILE* dico)
+void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico)
 {
     if (index == 0 || index == 1)//the way to access info gives the bits associated
     {
-        push(s, index);
+        stackPush(s, index);
     }
-    if (tree->left == NULL && tree->right == NULL)//if we have a leaf
+    if (tree->left == NULL && tree->right == NULL) //if we have a leaf
     {
-        if (tree->letter != '\0' && tree->letter != ' ' )//the leaf must have a letter
+        if (tree->letter != '\0' && tree->letter != ' ') //the leaf must have a letter
         {
-            Element* temp = s->values_of_stack;
+            Element* temp = s->values;
             fprintf(dico, "%c : ", tree->letter);
             list_read_backwards(temp, dico);
         }
-        int delete = pop(s);
+        int delete = stackPop(s);
     }
     else {
         read_tree_dico(tree->left, name_file, s, 0,dico);

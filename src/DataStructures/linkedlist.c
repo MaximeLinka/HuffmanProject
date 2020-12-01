@@ -11,19 +11,19 @@ Element* createElement(char c)
 	return e;
 }
 
-void freeElement(Element* e)
+void freeLinkedList(LinkedList l)
 {
-	while (e != NULL)
+	while (l != NULL)
 	{
-		Element* old = e;
-		e = e->next;
+		LinkedList old = l;
+		l = l->next;
 		free(old);
 	}
 }
 
-void printElement(Element* e)
+void printLinkedList(LinkedList l)
 {
-	Element* temp = e;
+	LinkedList temp = l;
 	while (temp != NULL)
 	{
 		printf("(\'%c\', %d) -> ", temp->character, temp->occurences);
@@ -32,9 +32,9 @@ void printElement(Element* e)
 	puts("NULL");
 }
 
-int containsElement(Element* e, char c)
+int containsElement(LinkedList l, char c)
 {
-	Element* temp = e;
+	LinkedList temp = l;
 
 	while (temp != NULL)
 	{
@@ -44,9 +44,9 @@ int containsElement(Element* e, char c)
 	return 0;
 }
 
-void appendElement(Element** e, char c)
+void appendLinkedList(LinkedList* l, char c)
 {
-	Element* temp = *e;
+	LinkedList temp = *l;
 	while (temp != NULL)
 	{
 		temp = temp->next;
@@ -56,11 +56,11 @@ void appendElement(Element** e, char c)
 	temp->next = new_e;
 }
 
-void removeElement(char c);
+void removeElement(LinkedList l, char c);
 
-void sortElementByOccurenceDescendent(Element** e)
+void sortLinkedListByOccurenceDescendent(LinkedList* l)
 {
-	Element* temp1 = *e;
+	Element* temp1 = *l;
 
 	while(temp1 != NULL)
 	{
@@ -72,8 +72,10 @@ void sortElementByOccurenceDescendent(Element** e)
 				// swap
 				char temp_char = temp1->character;
 				size_t temp_occurences = temp1->occurences;
+
 				temp1->character = temp2->character;
 				temp1->occurences = temp2->occurences;
+
 				temp2->character = temp_char;
 				temp2->occurences = temp_occurences;
 			}
@@ -83,10 +85,10 @@ void sortElementByOccurenceDescendent(Element** e)
 	}
 }
 
-Element* minElement(Element* e)
+Element* minLinkedList(LinkedList l)
 {
-	Element* min = e;
-	Element* temp = e;
+	LinkedList min = l;
+	LinkedList temp = l;
 
 	while (temp != NULL)
 	{

@@ -1,38 +1,38 @@
 #include <stdlib.h>
-#include "linkedlist.h"
+#include "DataStructures/linkedlist.h"
+#include "DataStructures/stack.h"
 
 
-typedef struct Node {
+typedef struct Node 
+{
     int occurence;
     char letter;
     struct Node* left;
     struct Node* right;
 } Node;
 
-typedef struct listNode {
-    Node *  node;
-    struct listNode* next;
-} listNode;
+typedef Node* HuffmanTree;
 
-typedef struct Stack
+
+typedef struct NodeElement
 {
-    List values_of_stack;
-}Stack;
+    Node* data;
+    struct NodeElement* next;
+} NodeElement;
 
-Node* create_node(int val, char letter);
-Node* create_link(Node* current_node, Node* leaf);//creates parent to two leaves with sum of occurences as 'occurences' and '\0' as character
-Node* convert_list_to_tree(Element* l, int occurences);
-listNode* convert_list_to_listofnodes(Element* l);
+typedef NodeElement* NodeLinkedList;
 
-void print_tree(Node* tree);
 
-void free_list_node(listNode* node);
-void free_tree(Node* tree);
+Node* createNode(int value, char letter);
+Node* createLink(Node* current_node, Node* leaf);  //creates parent to two leaves with sum of occurences as 'occurences' and '\0' as character
+NodeLinkedList occurenceListToNodeList(LinkedList l);
+HuffmanTree buildHuffmanTree(LinkedList l, int occurences);
 
-Stack* create_stack();
-int is_empty(Stack* s);
-void push(Stack* s, int val);
-int pop(Stack* s);
+void printHuffmanTree(Node* tree);
+void freeHuffmanTree(Node* tree);
+
+void freeNodeLinkedList(NodeLinkedList list);
+
 void list_read_backwards(Element* l, FILE* dico);
 void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico);
 

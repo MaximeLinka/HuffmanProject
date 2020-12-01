@@ -21,10 +21,13 @@
     <ClCompile Include="src\utils.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\linkedlist.c">
+    <ClCompile Include="src\huffman_tree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\huffman_tree.c">
+    <ClCompile Include="src\DataStructures\linkedlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStructures\stack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +35,13 @@
     <ClInclude Include="src\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\linkedlist.h">
+    <ClInclude Include="src\huffman_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\huffman_tree.h">
+    <ClInclude Include="src\DataStructures\linkedlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStructures\stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

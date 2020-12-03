@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "linkedlist.h"
 
@@ -101,9 +102,10 @@ Element* minLinkedList(LinkedList l)
 
 
 // Specific functions
-Element* createOccurenceList(char* string, size_t strlength) //TODO: remove strlength from api
+Element* createOccurenceList(char* string)
 {
 	Element* map = createElement(string[0]);
+	size_t strlength = strlen(string);
 
 	int c;
 	for (c = 1; c < strlength; c++)

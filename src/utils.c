@@ -5,7 +5,7 @@
 
 char* readFile(const char* filepath)
 {
-	FILE* file = fopen(filepath, "r");
+	FILE* file = fopen(filepath, "rb");
 	if (file == NULL)
 	{
 		printf("Could not open file : %s", filepath);
@@ -17,7 +17,7 @@ char* readFile(const char* filepath)
 	long length = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
-	char* result = (char*)malloc(length + 1);
+	char* result = (char*)malloc(sizeof(char) * (length + 1));
 	fread(result, 1, length, file);
 
 	result[length] = '\0';
@@ -114,4 +114,93 @@ int getFileLength(const char* filepath)
 
 	fclose(file);
 	return length;
+}
+
+int getFileLineCount(const char* filepath)
+{
+	/* Notes :
+	 * This function returns the number of lines.
+	 * If file is empty, the function returns 0.
+	*/
+
+	FILE* file = fopen(filepath, "r");
+	if (file == NULL)
+	{
+		printf("Could not open file : %s", filepath);
+		fclose(file);
+		return -1;
+	}
+
+	int lines = 0;
+	int ch;
+
+	while (!feof(file))
+	{
+		ch = fgetc(file);
+		if (ch == '\n')
+		{
+			lines++;
+		}
+	}
+
+	fclose(file);
+	return lines;
+}
+
+char* findBinary(Dictionnary dict, char c)
+{
+	DicoElement* temp = dict;
+	while (temp != NULL && temp->character != c)
+	{
+		temp = temp->next;
+	}
+	if (temp == NULL) return NULL;
+	else return temp->binary;
+}
+
+size_t findLengthEncoding(Dictionnary dictionnary, char* string)
+{
+	size_t length = 0;
+	char* character_bits;
+	int i = 0;
+
+	while (string[i] != '\0')
+	{
+		character_bits = findBinary(dictionnary, string[i]);
+		length = length + strlen(character_bits); 
+		i++;
+	}
+
+	//free(character_bits);
+	return length;
+}
+
+char* textEncoding(Dictionnary dictionnary, char* string)
+{
+	/* Notes :
+	 * TODO : REMOVE \r
+	 * This function translates a text into a binary sequence based on the Huffman dictionary.
+	*/
+
+	size_t encoded_size = findLengthEncoding(dictionnary, string);
+	char* encoded_text = (char*)malloc(sizeof(char) * encoded_size); 
+	char* character_bits;
+	int string_index = 0;
+	int encoding_index = 0;
+ 
+	while (string[string_index] != '\0')
+	{
+		character_bits = findBinary(dictionnary, string[string_index]);
+		int k = 0;
+		while (character_bits[k] != '\0' && character_bits[k] != '\r')
+		{
+			encoded_text[encoding_index] = character_bits[k];
+			encoding_index++;
+			k++;
+		}
+		string_index++;
+	}
+
+	//free(character_bits);
+	return encoded_text;
 }

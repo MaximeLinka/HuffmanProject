@@ -29,7 +29,7 @@ void sortLinkedListByOccurenceDescendent(LinkedList* e);
 Element* minLinkedList(LinkedList l);
 
 // Specific functions
-LinkedList createOccurenceList(char* string, size_t strlength); // Answers Part 2 - Question C
+LinkedList createOccurenceList(char* string); // Answers Part 2 - Question C
 void remove_list(Element** l, Element* disposable);
 
 #endif

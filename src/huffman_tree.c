@@ -121,6 +121,7 @@ void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico
             Element* temp = s->values;
             fprintf(dico, "%c : ", tree->letter);
             list_read_backwards(temp, dico);
+            fprintf(dico, "\n");
         }
         int delete = stackPop(s);
     }

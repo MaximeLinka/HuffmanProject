@@ -2,6 +2,8 @@
 #include "DataStructures/linkedlist.h"
 #include "DataStructures/stack.h"
 
+#ifndef HUFFMANTREE_H
+#define HUFFMANTREE_H
 
 typedef struct Node 
 {
@@ -36,4 +38,4 @@ void freeNodeLinkedList(NodeLinkedList list);
 void list_read_backwards(Element* l, FILE* dico);
 void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico);
 
-
+#endif

@@ -45,16 +45,45 @@ int containsElement(LinkedList l, char c)
 	return 0;
 }
 
-void appendLinkedList(LinkedList* l, char c)
+int getOccurenceListSize(LinkedList l)
 {
-	LinkedList temp = *l;
+	Element* temp = l;
+	int length = 0;
 	while (temp != NULL)
 	{
+		length++;
 		temp = temp->next;
 	}
 
-	Element* new_e = createElement(c);
-	temp->next = new_e;
+	return length;
+}
+
+int getLinkedListSumOccurences(LinkedList l)
+{
+	Element* temp = l;
+	int sum = 0;
+	while (temp != NULL)
+	{
+		sum += temp->occurences;
+		temp = temp->next;
+	}
+
+	return sum;
+}
+
+void appendLinkedList(LinkedList* l, char c)
+{
+	if (*l != NULL)
+	{
+		LinkedList temp = *l;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+
+		//Element* new_e = createElement(c);
+		temp->next = createElement(c);
+	}
 }
 
 void removeElement(LinkedList l, char c);
@@ -86,6 +115,20 @@ void sortLinkedListByOccurenceDescendent(LinkedList* l)
 	}
 }
 
+int isLinkedListSorted(LinkedList l)
+{
+	if (l == NULL) return 1;
+
+	Element* temp = l;
+	while (temp->next != NULL)
+	{
+		if (temp->occurences < temp->next->occurences)
+			return 0;
+		temp = temp->next;
+	}
+	return 1;
+}
+
 Element* minLinkedList(LinkedList l)
 {
 	LinkedList min = l;
@@ -112,7 +155,8 @@ Element* createOccurenceList(char* string)
 	{
 		Element* temp = map;
 		int found = 0;
-		while (temp->next != NULL)
+
+		while (temp != NULL)
 		{
 			if (temp->character == string[c])
 			{
@@ -124,8 +168,7 @@ Element* createOccurenceList(char* string)
 
 		if (!found)
 		{
-			Element* new_e = createElement(string[c]);
-			temp->next = new_e;
+			appendLinkedList(&map, string[c]);
 		}
 	}
 

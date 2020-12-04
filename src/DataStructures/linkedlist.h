@@ -21,10 +21,14 @@ void printLinkedList(LinkedList l);
 
 int containsElement(LinkedList l, char c);
 
+int getOccurenceListSize(LinkedList l);
+int getLinkedListSumOccurences(LinkedList l);
+
 void appendLinkedList(LinkedList* l, char c);
 void removeElement(LinkedList l, char c);
 
-void sortLinkedListByOccurenceDescendent(LinkedList* e);
+void sortLinkedListByOccurenceDescendent(LinkedList* );
+int isLinkedListSorted(LinkedList l);
 
 Element* minLinkedList(LinkedList l);
 

@@ -5,15 +5,20 @@
 #include "DataStructures/linkedlist.h"
 #include "huffman_tree.h"
 #include "DataStructures/dictionnary.h"
+#include "debug.h"
+
+#include "Tests/test.h"
 
 #define INPUT_FILE "assets/input.txt"
 #define OUTPUT_FILE "assets/output.txt"
 #define DICO_FILE "assets/dico.txt"
 
+
 int main()
 {
 	puts("Hello Huffman !");
 	
+	// TESTING CHAR TO BINARY CONVERSION
 	stringFileToBinary(INPUT_FILE, OUTPUT_FILE);
 	puts("The transfer was successfull !");
 
@@ -22,10 +27,10 @@ int main()
 
 	char* file_content = readFile(INPUT_FILE);
 	LinkedList occurence_list = createOccurenceList(file_content);
-	printLinkedList(occurence_list);
 
-	//puts("After sorting !");
-
+	testOccurenceListGeneration();
+	testOccurenceListSorting();
+	
 	sortLinkedListByOccurenceDescendent(&occurence_list);
 	printLinkedList(occurence_list);
 
@@ -42,10 +47,10 @@ int main()
 	printDictionnary(dictio);
 
 	char* encoded = textEncoding(dictio, file_content); //TODO: FIX PROBLEM \r
-	printf("%s", encoded);
+	printf("%s\n", encoded);
 
 	freeHuffmanTree(tree);
-	
 
+	CONSOLE_RESET();
 	return 0;
 }

@@ -35,6 +35,7 @@ int writeStringToFile(const char* filepath, char* string, size_t strlength)
 	*/ 
 
 	FILE* file = fopen(filepath, "w");
+	printf("%p", file);
 	if (file == NULL)
 	{
 		printf("Could not open file : %s", filepath);
@@ -167,7 +168,7 @@ size_t findLengthEncoding(Dictionnary dictionnary, char* string)
 	while (string[i] != '\0')
 	{
 		character_bits = findBinary(dictionnary, string[i]);
-		length = length + strlen(character_bits); 
+		length = length + strlen(character_bits);
 		i++;
 	}
 

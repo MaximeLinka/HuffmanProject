@@ -7,8 +7,8 @@
 
 typedef struct Node 
 {
-    int occurence;
-    char letter;
+    int occurences;
+    char character;
     struct Node* left;
     struct Node* right;
 } Node;
@@ -25,13 +25,14 @@ typedef struct NodeElement
 typedef NodeElement* NodeLinkedList;
 
 
-Node* createNode(int value, char letter);
+Node* createNode(int value, char c);
 Node* createLink(Node* current_node, Node* leaf);  //creates parent to two leaves with sum of occurences as 'occurences' and '\0' as character
-NodeLinkedList occurenceListToNodeList(LinkedList l);
-HuffmanTree buildHuffmanTree(LinkedList l, int occurences);
+NodeLinkedList occurenceListToNodeList(OccurenceList l);
+HuffmanTree buildHuffmanTree(OccurenceList l);
 
-void printHuffmanTree(Node* tree);
-void freeHuffmanTree(Node* tree);
+void printHuffmanTreePreorder(HuffmanTree tree);
+void printHuffmanTree(HuffmanTree tree);
+void freeHuffmanTree(HuffmanTree tree);
 
 void freeNodeLinkedList(NodeLinkedList list);
 

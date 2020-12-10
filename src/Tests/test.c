@@ -8,7 +8,7 @@ void testOccurenceListGeneration()
 	DEBUG_INFO("Starting Occurence list generation test...");
 
 	char* test = "aaabbccccdeffgghijjj";
-	LinkedList l = createOccurenceList(test);
+	OccurenceList l = createOccurenceList(test);
 
 	int size = getOccurenceListSize(l);
 	if (size != 10)
@@ -18,7 +18,7 @@ void testOccurenceListGeneration()
 	}
 	DEBUG_INFO("\t*Test case 1 passed.");
 
-	int sum = getLinkedListSumOccurences(l);
+	int sum = getOccurenceListSum(l);
 	if (sum != 20)
 	{
 		DEBUG_CRITICAL("Occurence list generation test failed ! list sum of occurences was %d instead of 20.", sum);
@@ -27,7 +27,7 @@ void testOccurenceListGeneration()
 
 	DEBUG_INFO("\t*Test case 2 passed.");
 
-	freeLinkedList(l);
+	freeOccurenceList(l);
 	DEBUG_SUCCESS("Occurence list generation test was successful !");
 	CONSOLE_RESET();
 }
@@ -37,10 +37,10 @@ void testOccurenceListSorting()
 	DEBUG_INFO("Starting Occurence list sorting test...");
 
 	char* test = "aaabbccccdeffgghijjj";
-	LinkedList l = createOccurenceList(test);
-	sortLinkedListByOccurenceDescendent(&l);
+	OccurenceList l = createOccurenceList(test);
+	sortOccurenceListByOccurenceDescendent(&l);
 
-	int sorted = isLinkedListSorted(l);
+	int sorted = isOccurenceListSorted(l);
 	if (!sorted)
 	{
 		DEBUG_CRITICAL("Occurence list sorting test failed ! list is not sorted.");
@@ -49,7 +49,7 @@ void testOccurenceListSorting()
 
 	DEBUG_INFO("\t*Test case 1 passed.");
 
-	freeLinkedList(l);
+	freeOccurenceList(l);
 	DEBUG_SUCCESS("Occurence list sorting test was successful !");
 	CONSOLE_RESET();
 }

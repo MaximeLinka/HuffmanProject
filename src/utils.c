@@ -179,7 +179,6 @@ size_t findLengthEncoding(Dictionnary dictionnary, char* string)
 char* textEncoding(Dictionnary dictionnary, char* string)
 {
 	/* Notes :
-	 * TODO : REMOVE \r
 	 * This function translates a text into a binary sequence based on the Huffman dictionary.
 	*/
 
@@ -193,7 +192,7 @@ char* textEncoding(Dictionnary dictionnary, char* string)
 	{
 		character_bits = findBinary(dictionnary, string[string_index]);
 		int k = 0;
-		while (character_bits[k] != '\0' && character_bits[k] != '\r')
+		while (character_bits[k] != '\0')
 		{
 			encoded_text[encoding_index] = character_bits[k];
 			encoding_index++;
@@ -202,6 +201,18 @@ char* textEncoding(Dictionnary dictionnary, char* string)
 		string_index++;
 	}
 
+	encoded_text[encoding_index] = '\0';
+
 	//free(character_bits);
 	return encoded_text;
+}
+
+char* encodeText(char* string)
+{
+
+}
+
+int compressFile(const char* input, const char* output)
+{
+
 }

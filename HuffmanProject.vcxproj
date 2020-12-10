@@ -144,7 +144,7 @@
   <ItemGroup>
     <ClCompile Include="src\DataStructures\dictionnary.c" />
     <ClCompile Include="src\DataStructures\stack.c" />
-    <ClCompile Include="src\huffman_tree.c" />
+    <ClCompile Include="src\DataStructures\huffman_tree.c" />
     <ClCompile Include="src\DataStructures\linkedlist.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\Tests\test.c" />
@@ -154,7 +154,7 @@
     <ClInclude Include="src\DataStructures\dictionnary.h" />
     <ClInclude Include="src\DataStructures\stack.h" />
     <ClInclude Include="src\debug.h" />
-    <ClInclude Include="src\huffman_tree.h" />
+    <ClInclude Include="src\DataStructures\huffman_tree.h" />
     <ClInclude Include="src\DataStructures\linkedlist.h" />
     <ClInclude Include="src\Tests\test.h" />
     <ClInclude Include="src\utils.h" />

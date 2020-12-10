@@ -11,29 +11,29 @@ typedef struct Element
 	struct Element* next;
 } Element;
 
-typedef Element* LinkedList;
+typedef Element* OccurenceList;
 
 
 // Basic functions
 Element* createElement(char c);
-void freeLinkedList(LinkedList l);
-void printLinkedList(LinkedList l);
+void freeOccurenceList(OccurenceList l);
+void printOccurenceList(OccurenceList l);
 
-int containsElement(LinkedList l, char c);
+int containsElement(OccurenceList l, char c);
 
-int getOccurenceListSize(LinkedList l);
-int getLinkedListSumOccurences(LinkedList l);
+int getOccurenceListSize(OccurenceList l);
+int getOccurenceListSum(OccurenceList l);
 
-void appendLinkedList(LinkedList* l, char c);
-void removeElement(LinkedList l, char c);
+void appendOccurenceList(OccurenceList* l, char c);
+void removeElement(OccurenceList l, char c);
 
-void sortLinkedListByOccurenceDescendent(LinkedList* );
-int isLinkedListSorted(LinkedList l);
+void sortOccurenceListByOccurenceDescendent(OccurenceList* l);
+int isOccurenceListSorted(OccurenceList l);
 
-Element* minLinkedList(LinkedList l);
+Element* minOccurenceList(OccurenceList l);
 
 // Specific functions
-LinkedList createOccurenceList(char* string); // Answers Part 2 - Question C
+OccurenceList createOccurenceList(char* string); // Answers Part 2 - Question C
 void remove_list(Element** l, Element* disposable);
 
 #endif

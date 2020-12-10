@@ -5,7 +5,7 @@
 
 typedef struct Stack
 {
-    LinkedList values;
+    OccurenceList values;
 }Stack;
 
 

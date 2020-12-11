@@ -27,7 +27,6 @@ void printHuffmanTreePreorder(HuffmanTree tree)
         printf("%d : \'%c\'\n", tree->occurences, tree->character);
         printHuffmanTreePreorder(tree->left);
         printHuffmanTreePreorder(tree->right);
-        
     }
 }
 
@@ -40,6 +39,36 @@ void freeHuffmanTree(HuffmanTree tree)
         free(tree);
     }
 }
+
+int getHuffmanTreeHeight(HuffmanTree tree)
+{
+    if (tree == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int left_depth = getHuffmanTreeHeight(tree->left);
+        int right_depth = getHuffmanTreeHeight(tree->right);
+
+        if (left_depth > right_depth) return left_depth + 1;
+        else return right_depth + 1;
+    }
+}
+
+int getHuffmanTreeLeafCount(HuffmanTree tree)
+{
+    if (tree != NULL)
+    {
+        if (tree->character != '\0')
+        {
+            return getHuffmanTreeLeafCount(tree->left) + getHuffmanTreeLeafCount(tree->right) + 1;
+        }
+        else
+            return 0;
+    }
+}
+
 
 NodeLinkedList occurenceListToNodeList(OccurenceList l)
 {
@@ -108,33 +137,42 @@ HuffmanTree buildHuffmanTree(OccurenceList l)
     return tree;
 }
 
-void list_read_backwards(Element* l, FILE* dico) {
-    if (l != NULL) {
-        list_read_backwards(l->next, dico);
-        fprintf(dico, "%d", l->occurences);
-    }
+NodeStack* createNodeStack()
+{
+    NodeStack* new_stack = (NodeStack*)malloc(sizeof(NodeStack));
+    new_stack->nodes = NULL;
+    return new_stack;
 }
 
-void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico)
+void freeNodeStack(NodeStack* s)
 {
-    if (index == 0 || index == 1) //the way to access info gives the bits associated
-    {
-        stackPush(s, index);
-    }
-    if (tree->left == NULL && tree->right == NULL) //if we have a leaf
-    {
-        if (tree->character != '\0') //the leaf must have a letter
-        {
-            Element* temp = s->values;
-            fprintf(dico, "%c : ", tree->character);
-            list_read_backwards(temp, dico);
-            fprintf(dico, "\n");
-        }
-        int delete = stackPop(s);
+    freeNodeLinkedList(s->nodes);
+}
+
+int isNodeStackEmpty(NodeStack* s)
+{
+    return (s->nodes == NULL);
+}
+
+void nodeStackPush(NodeStack* s, Node* node)
+{
+    NodeElement* e = (NodeElement*)malloc(sizeof(NodeElement));
+    e->data = node;
+    e->next = s->nodes;
+    s->nodes = e;
+}
+
+Node* nodeStackPop(NodeStack* s)
+{
+    if (isNodeStackEmpty(s)) {
+        return NULL;
     }
     else {
-        read_tree_dico(tree->left, name_file, s, 0,dico);
-        read_tree_dico(tree->right, name_file, s, 1,dico);
+        NodeElement* old = s->nodes;
+        s->nodes = s->nodes->next;
+        Node* temp = old->data;
+        free(old);
+        return temp;
     }
 }
 

@@ -27,9 +27,6 @@
     <ClCompile Include="src\DataStructures\stack.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\DataStructures\dictionnary.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Tests\test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -40,6 +37,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\DataStructures\avl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\coding.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStructures\dictionary.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,9 +56,6 @@
     <ClInclude Include="src\DataStructures\stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\DataStructures\dictionnary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Tests\test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\DataStructures\huffman_tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\coding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStructures\dictionary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

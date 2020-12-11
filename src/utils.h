@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "DataStructures/dictionnary.h"
+#include "DataStructures/dictionary.h"
 
 #ifndef UTILS_H
 #define UTILS_H
@@ -17,12 +17,10 @@ void stringFileToBinary(const char* file_in, const char* file_out);
 int getFileLength(const char* filepath);
 int getFileLineCount(const char* filepath);
 
-char* findBinary(Dictionnary dict, char c);
-size_t findLengthEncoding(Dictionnary dictionnary, char* string);
-char* textEncoding(Dictionnary dictionnary, char* string);
+char* findBinary(Dictionary dict, char c);
+size_t findLengthEncoding(Dictionary Dictionary, char* string);
+char* encodeTextWithDictionary(Dictionary Dictionary, char* string);
 
-char* encodeText(char* string);
-int compressFile(const char* input, const char* output);
 
 #endif
 

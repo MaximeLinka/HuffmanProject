@@ -10,8 +10,10 @@ typedef struct Stack
 
 
 Stack* createStack();
+void freeStack(Stack* s);
 int isStackEmpty(Stack* s);
 void stackPush(Stack* s, int value);
 int stackPop(Stack* s);
+
 
 #endif

@@ -1,5 +1,8 @@
 #include "huffman_tree.h"
-//AVL
+
+#ifndef AVL_H
+#define AVL_H
+
 void right_rotation(Node** tree);
 void left_rotation(Node** tree);
 int tree_depth(Node* tree);
@@ -10,3 +13,5 @@ void add_node_AVL(Node** tree, char val);
 void AvlToArray(Node* my_array, Node* tree, int * meter);
 int TreesCountNodes(Node* tree);
 void add_BST(Node** tree, char val);
+
+#endif

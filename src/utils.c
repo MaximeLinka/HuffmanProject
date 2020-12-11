@@ -35,7 +35,6 @@ int writeStringToFile(const char* filepath, char* string, size_t strlength)
 	*/ 
 
 	FILE* file = fopen(filepath, "w");
-	printf("%p", file);
 	if (file == NULL)
 	{
 		printf("Could not open file : %s", filepath);
@@ -148,7 +147,7 @@ int getFileLineCount(const char* filepath)
 	return lines;
 }
 
-char* findBinary(Dictionnary dict, char c)
+char* findBinary(Dictionary dict, char c)
 {
 	DicoElement* temp = dict;
 	while (temp != NULL && temp->character != c)
@@ -159,7 +158,7 @@ char* findBinary(Dictionnary dict, char c)
 	else return temp->binary;
 }
 
-size_t findLengthEncoding(Dictionnary dictionnary, char* string)
+size_t findLengthEncoding(Dictionary dictionnary, char* string)
 {
 	size_t length = 0;
 	char* character_bits;
@@ -176,14 +175,14 @@ size_t findLengthEncoding(Dictionnary dictionnary, char* string)
 	return length;
 }
 
-char* encodeTextWithDictionary(Dictionnary dictionnary, char* string)
+char* encodeTextWithDictionary(Dictionary dictionnary, char* string)
 {
 	/* Notes :
 	 * This function translates a text into a binary sequence based on the Huffman dictionary.
 	*/
 
 	size_t encoded_size = findLengthEncoding(dictionnary, string);
-	char* encoded_text = (char*)malloc(sizeof(char) * encoded_size); 
+	char* encoded_text = (char*)malloc(sizeof(char) * (encoded_size+1)); 
 	char* character_bits;
 	int string_index = 0;
 	int encoding_index = 0;
@@ -205,20 +204,4 @@ char* encodeTextWithDictionary(Dictionnary dictionnary, char* string)
 
 	//free(character_bits);
 	return encoded_text;
-}
-
-char* encodeText(char* string)
-{
-	// - build occurence list
-	// - build huffman tree
-	// - create Dictionary
-	// 
-}
-
-int compressFile(const char* input, const char* output)
-{
-	char* file_content = readFile(input);
-
-	// encode text
-	// write encode text to file
 }

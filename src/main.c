@@ -4,10 +4,11 @@
 #include "utils.h"
 #include "DataStructures/linkedlist.h"
 #include "DataStructures/huffman_tree.h"
-#include "DataStructures/dictionnary.h"
+#include "DataStructures/dictionary.h"
 #include "DataStructures/avl.h"
 #include "debug.h"
 
+#include "coding.h"
 
 #include "Tests/test.h"
 
@@ -22,21 +23,6 @@ int main()
 {
 	puts("Hello Huffman !");
 
-	// TESTING CHAR TO BINARY CONVERSION
-	stringFileToBinary(INPUT_FILE, OUTPUT_FILE);
-	puts("The transfer was successfull !");
-
-	printf("The input file was %d characters large.\n", getFileLength(INPUT_FILE));
-	printf("The output file was %d characters large.\n", getFileLength(OUTPUT_FILE));
-
-	char* file_content = readFile(INPUT_FILE);
-	Node* tree = CreateAvl("Hello");
-	printHuffmanTreePreorder(tree);//had to modify it to understand our avl
-	freeHuffmanTree(tree);
-
-	/*
-	OccurenceList occurence_list = createOccurenceList(file_content);
-
 #if ENABLE_TESTING
 
 	testOccurenceListGeneration();
@@ -44,23 +30,13 @@ int main()
 
 #endif
 
-	sortOccurenceListByOccurenceDescendent(&occurence_list);
-	//printOccurenceList(occurence_list);
+	char* text = encodeText("test", TEST_FILE);
+	printf("translated text : %s\n", text);
 
-	HuffmanTree tree = buildHuffmanTree(occurence_list);
-	//printHuffmanTreePreorder(tree);
+	free(text);
 
-	storeDictionnary(tree, TEST_FILE);
-	
-	Dictionnary dictio = readDictionnary(DICO_FILE);
-	printf("%c\n", dictio->next->binary[2]);
-	//printDictionnary(dictio);
+	compressFile(INPUT_FILE, OUTPUT_FILE, DICO_FILE);
 
-	char* encoded = encodeTextWithDictionary(dictio, file_content);
-	printf("%s\n", encoded);
-
-	freeHuffmanTree(tree);
-
-	CONSOLE_RESET();*/
+	CONSOLE_RESET();
 	return 0;
 }

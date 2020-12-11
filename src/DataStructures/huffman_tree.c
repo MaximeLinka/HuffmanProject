@@ -27,7 +27,6 @@ void printHuffmanTreePreorder(HuffmanTree tree)
         printf("%d : \'%c\'\n", tree->occurences, tree->character);
         printHuffmanTreePreorder(tree->left);
         printHuffmanTreePreorder(tree->right);
-        
     }
 }
 

@@ -142,7 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DataStructures\dictionnary.c" />
+    <ClCompile Include="src\coding.c" />
+    <ClCompile Include="src\DataStructures\dictionary.c" />
     <ClCompile Include="src\DataStructures\avl.c" />
     <ClCompile Include="src\DataStructures\avl.h" />
     <ClCompile Include="src\DataStructures\stack.c" />
@@ -153,7 +154,8 @@
     <ClCompile Include="src\utils.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DataStructures\dictionnary.h" />
+    <ClInclude Include="src\coding.h" />
+    <ClInclude Include="src\DataStructures\dictionary.h" />
     <ClInclude Include="src\DataStructures\stack.h" />
     <ClInclude Include="src\debug.h" />
     <ClInclude Include="src\DataStructures\huffman_tree.h" />

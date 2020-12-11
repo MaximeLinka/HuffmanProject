@@ -5,7 +5,9 @@
 #include "DataStructures/linkedlist.h"
 #include "DataStructures/huffman_tree.h"
 #include "DataStructures/dictionnary.h"
+#include "DataStructures/avl.h"
 #include "debug.h"
+
 
 #include "Tests/test.h"
 
@@ -28,6 +30,11 @@ int main()
 	printf("The output file was %d characters large.\n", getFileLength(OUTPUT_FILE));
 
 	char* file_content = readFile(INPUT_FILE);
+	Node* tree = CreateAvl("Hello");
+	printHuffmanTreePreorder(tree);//had to modify it to understand our avl
+	freeHuffmanTree(tree);
+
+	/*
 	OccurenceList occurence_list = createOccurenceList(file_content);
 
 #if ENABLE_TESTING
@@ -54,6 +61,6 @@ int main()
 
 	freeHuffmanTree(tree);
 
-	CONSOLE_RESET();
+	CONSOLE_RESET();*/
 	return 0;
 }

@@ -143,6 +143,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\DataStructures\dictionnary.c" />
+    <ClCompile Include="src\DataStructures\avl.c" />
+    <ClCompile Include="src\DataStructures\avl.h" />
     <ClCompile Include="src\DataStructures\stack.c" />
     <ClCompile Include="src\DataStructures\huffman_tree.c" />
     <ClCompile Include="src\DataStructures\linkedlist.c" />

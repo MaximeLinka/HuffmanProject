@@ -34,9 +34,23 @@ void printHuffmanTreePreorder(HuffmanTree tree);
 void printHuffmanTree(HuffmanTree tree);
 void freeHuffmanTree(HuffmanTree tree);
 
+int getHuffmanTreeHeight(HuffmanTree tree);
+int getHuffmanTreeLeafCount(HuffmanTree tree);
+
 void freeNodeLinkedList(NodeLinkedList list);
 
-void list_read_backwards(Element* l, FILE* dico);
-void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico);
+//void list_read_backwards(Element* l, FILE* dico);
+//void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico);
+
+typedef struct NodeStack
+{
+    NodeLinkedList nodes;
+} NodeStack;
+
+NodeStack* createNodeStack();
+void freeNodeStack(NodeStack* s);
+int isNodeStackEmpty(NodeStack* s);
+void nodeStackPush(NodeStack* s, Node* node);
+Node* nodeStackPop(NodeStack* s);
 
 #endif

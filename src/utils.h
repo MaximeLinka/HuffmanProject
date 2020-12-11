@@ -19,7 +19,7 @@ int getFileLineCount(const char* filepath);
 
 char* findBinary(Dictionnary dict, char c);
 size_t findLengthEncoding(Dictionnary dictionnary, char* string);
-char* textEncoding(Dictionnary dictionnary, char* string);
+char* encodeTextWithDictionary(Dictionnary dictionnary, char* string);
 
 char* encodeText(char* string);
 int compressFile(const char* input, const char* output);

@@ -7,6 +7,11 @@ Stack* createStack()
     return new_stack;
 }
 
+void freeStack(Stack* s)
+{
+    freeOccurenceList(s->values);
+}
+
 int isStackEmpty(Stack* s)
 {
     return (s->values == NULL);

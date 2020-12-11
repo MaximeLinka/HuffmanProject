@@ -37,20 +37,83 @@ void printDictionnary(Dictionnary dictionnary)
 	}
 }
 
-static Dictionnary buildDictionnary_spec(HuffmanTree tree, int* array)
+void storeDictionnary(HuffmanTree tree, const char* filepath)
 {
-	HuffmanTree temp = tree;
-	while (temp != NULL)
+	FILE* file = fopen(filepath, "w");
+	if (file == NULL)
 	{
-
+		printf("Could not open file : %s", filepath);
+		fclose(file);
+		return;
 	}
-	return NULL;
-}
 
-Dictionnary buildDictionnary(HuffmanTree tree)
-{
-	
-	return NULL;
+	Dictionnary dico = createDicoElement('\0', "\0");
+	Dictionnary temp = dico;
+
+	int length = getHuffmanTreeLeafCount(tree);
+	char* array = (char*)malloc(sizeof(char) * 200);
+	int index = 0;
+
+	if (tree != NULL)
+	{
+		NodeStack* stack = createNodeStack();
+		Stack* binary_stack = createStack();
+		nodeStackPush(stack, tree);
+		stackPush(binary_stack, 1);
+
+		while (!isNodeStackEmpty(stack))
+		{
+			Node* node = nodeStackPop(stack);
+			int left = stackPop(binary_stack);
+
+			if (node->right != NULL)
+			{
+				nodeStackPush(stack, node->right);
+				stackPush(binary_stack, 0);
+			}
+
+			if (node->left != NULL)
+			{
+				nodeStackPush(stack, node->left);
+				stackPush(binary_stack, 1);
+			}
+			
+			if (node->character == '\0')
+			{
+				if (left == 1) // means we're on a left node
+				{
+					array[index] = '0';
+					index++;
+				}
+				else if (left == 0) // means we're on a right node
+				{
+					array[index] = '1';
+					index++;
+				}
+				array[index] = '\0';
+			}
+			else
+			{
+				char* copy = (char*)malloc(sizeof(char) * strlen(array));
+				strcpy(copy, array);
+				temp->next = createDicoElement(node->character, _strrev(copy));
+				temp = temp->next;
+
+				fprintf(file, "%c:%s\n", node->character, _strrev(array));
+				_strrev(array);
+			}
+		}
+
+		freeNodeStack(stack);
+		freeStack(binary_stack);
+		free(array);
+	}
+
+	int l = strlen(temp->binary);
+	temp->binary[l-1] = '1';
+	printDictionnary(dico->next);
+
+	fclose(file);
 }
 
 Dictionnary readDictionnary(const char* filepath)

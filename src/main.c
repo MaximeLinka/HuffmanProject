@@ -14,16 +14,12 @@
 #define DICO_FILE "assets/dico.txt"
 #define TEST_FILE "assets/test.txt"
 
-/* TODO
- * - redo maxence's work
- * - fix problem of fopen in release mode
- * - refactor linkedlist files to occurence_list
-*/
+#define ENABLE_TESTING 1
 
 int main()
 {
 	puts("Hello Huffman !");
-	
+
 	// TESTING CHAR TO BINARY CONVERSION
 	stringFileToBinary(INPUT_FILE, OUTPUT_FILE);
 	puts("The transfer was successfull !");
@@ -34,26 +30,26 @@ int main()
 	char* file_content = readFile(INPUT_FILE);
 	OccurenceList occurence_list = createOccurenceList(file_content);
 
-	// TESTS
+#if ENABLE_TESTING
+
 	testOccurenceListGeneration();
 	testOccurenceListSorting();
-	
+
+#endif
+
 	sortOccurenceListByOccurenceDescendent(&occurence_list);
 	//printOccurenceList(occurence_list);
 
 	HuffmanTree tree = buildHuffmanTree(occurence_list);
 	//printHuffmanTreePreorder(tree);
 
-	Stack* s = createStack();
-	FILE* dico = fopen(TEST_FILE, "w+");
-	read_tree_dico(tree, TEST_FILE, s, 2, dico);
-	fclose(dico);
+	storeDictionnary(tree, TEST_FILE);
 	
 	Dictionnary dictio = readDictionnary(DICO_FILE);
 	printf("%c\n", dictio->next->binary[2]);
 	//printDictionnary(dictio);
 
-	char* encoded = textEncoding(dictio, file_content);
+	char* encoded = encodeTextWithDictionary(dictio, file_content);
 	printf("%s\n", encoded);
 
 	freeHuffmanTree(tree);

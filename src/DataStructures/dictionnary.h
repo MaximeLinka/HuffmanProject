@@ -17,7 +17,7 @@ DicoElement* createDicoElement(char character, char* binary);
 void freeDictionnary(Dictionnary dictionnary);
 void printDictionnary(Dictionnary dictionnary);
 
-Dictionnary buildDictionnary(HuffmanTree tree);
+void storeDictionnary(HuffmanTree tree, const char* filepath);
 
 Dictionnary readDictionnary(const char* filepath);
 

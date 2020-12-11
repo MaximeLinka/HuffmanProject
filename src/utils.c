@@ -176,7 +176,7 @@ size_t findLengthEncoding(Dictionnary dictionnary, char* string)
 	return length;
 }
 
-char* textEncoding(Dictionnary dictionnary, char* string)
+char* encodeTextWithDictionary(Dictionnary dictionnary, char* string)
 {
 	/* Notes :
 	 * This function translates a text into a binary sequence based on the Huffman dictionary.
@@ -209,10 +209,16 @@ char* textEncoding(Dictionnary dictionnary, char* string)
 
 char* encodeText(char* string)
 {
-
+	// - build occurence list
+	// - build huffman tree
+	// - create Dictionary
+	// 
 }
 
 int compressFile(const char* input, const char* output)
 {
+	char* file_content = readFile(input);
 
+	// encode text
+	// write encode text to file
 }

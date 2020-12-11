@@ -1,6 +1,7 @@
 #include "huffman_tree.h"
 
 
+
 Node* createNode(int value, char c) 
 {
     Node* tree = (Node*)malloc(sizeof(Node));
@@ -26,6 +27,7 @@ void printHuffmanTreePreorder(HuffmanTree tree)
         printf("%d : \'%c\'\n", tree->occurences, tree->character);
         printHuffmanTreePreorder(tree->left);
         printHuffmanTreePreorder(tree->right);
+        
     }
 }
 
@@ -135,3 +137,9 @@ void read_tree_dico(Node* tree, char* name_file, Stack* s, int index, FILE* dico
         read_tree_dico(tree->right, name_file, s, 1,dico);
     }
 }
+
+
+
+
+
+

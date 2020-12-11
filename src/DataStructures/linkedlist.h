@@ -35,5 +35,6 @@ Element* minOccurenceList(OccurenceList l);
 // Specific functions
 OccurenceList createOccurenceList(char* string); // Answers Part 2 - Question C
 void remove_list(Element** l, Element* disposable);
-
+//create a list of occurence
+//an array of nodes vs linked list of nodes 
 #endif

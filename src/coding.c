@@ -33,5 +33,5 @@ void compressFile(const char* input, const char* output, const char* dico)
 	writeStringToFile(output, code, strlen(code));
 
 	free(file_content);
-	//free(code);
+	free(code);
 }

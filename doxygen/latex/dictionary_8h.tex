@@ -1,0 +1,158 @@
+\hypertarget{dictionary_8h}{}\doxysection{src/\+Data\+Structures/dictionary.h File Reference}
+\label{dictionary_8h}\index{src/DataStructures/dictionary.h@{src/DataStructures/dictionary.h}}
+
+
+Header of the library containing the huffman dictionary.  
+
+
+{\ttfamily \#include \char`\"{}huffman\+\_\+tree.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_dico_element}{Dico\+Element}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dictionary_8h_a480d13d9de4ae3781101b70832047107}\label{dictionary_8h_a480d13d9de4ae3781101b70832047107}} 
+typedef struct \mbox{\hyperlink{struct_dico_element}{Dico\+Element}} \mbox{\hyperlink{dictionary_8h_a480d13d9de4ae3781101b70832047107}{Dico\+Element}}
+\begin{DoxyCompactList}\small\item\em a Linked\+List that represent the Huffman dictionary. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{dictionary_8h_a75d0a1670704923e348986686c3714f9}\label{dictionary_8h_a75d0a1670704923e348986686c3714f9}} 
+typedef \mbox{\hyperlink{struct_dico_element}{Dico\+Element}} $\ast$ \mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}
+\begin{DoxyCompactList}\small\item\em a nickname for Dico\+Element$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_dico_element}{Dico\+Element}} $\ast$ \mbox{\hyperlink{dictionary_8h_a7cac3dec627298d33b0e4f75b2c89dc2}{create\+Dico\+Element}} (char character, char $\ast$binary)
+\begin{DoxyCompactList}\small\item\em a function to create a dictionary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dictionary_8h_ad70eb5ba532e2534cfa079e770ee64b6}{free\+Dictionary}} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} dictionnary)
+\begin{DoxyCompactList}\small\item\em a function to drestroy and free the memory of a Dictionary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dictionary_8h_ad3a6f7234a118bd3ba843de6881922b8}{print\+Dictionary}} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} dictionnary)
+\begin{DoxyCompactList}\small\item\em a function to print the content of a dictionary. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} \mbox{\hyperlink{dictionary_8h_aae652a8d012ee8542b52e6c016a5fd3f}{build\+Dictionary}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function to create a huffman dictionary from the huffman tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dictionary_8h_ac328938abf7fdf9f7c4a1cb2fe924573}{serialize\+Dictionary}} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} dico, const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function to store a dictionary in a txt file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dictionary_8h_af4d239a05ee72a6a6d518f82ca720d1d}{store\+Dictionary}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree, const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function to store a dictionary in a txt file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} \mbox{\hyperlink{dictionary_8h_accc134ba42b38ea91ec2bef40b6486cd}{read\+Dictionary}} (const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function to read a dictionary from a txt file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing the huffman dictionary. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dictionary_8h_aae652a8d012ee8542b52e6c016a5fd3f}\label{dictionary_8h_aae652a8d012ee8542b52e6c016a5fd3f}} 
+\index{dictionary.h@{dictionary.h}!buildDictionary@{buildDictionary}}
+\index{buildDictionary@{buildDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{buildDictionary()}{buildDictionary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} build\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to create a huffman dictionary from the huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_a7cac3dec627298d33b0e4f75b2c89dc2}\label{dictionary_8h_a7cac3dec627298d33b0e4f75b2c89dc2}} 
+\index{dictionary.h@{dictionary.h}!createDicoElement@{createDicoElement}}
+\index{createDicoElement@{createDicoElement}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{createDicoElement()}{createDicoElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_dico_element}{Dico\+Element}}$\ast$ create\+Dico\+Element (\begin{DoxyParamCaption}\item[{char}]{character,  }\item[{char $\ast$}]{binary }\end{DoxyParamCaption})}
+
+
+
+a function to create a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & a character. \\
+\hline
+{\em binary} & a string representing the binary of a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_ad70eb5ba532e2534cfa079e770ee64b6}\label{dictionary_8h_ad70eb5ba532e2534cfa079e770ee64b6}} 
+\index{dictionary.h@{dictionary.h}!freeDictionary@{freeDictionary}}
+\index{freeDictionary@{freeDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{freeDictionary()}{freeDictionary()}}
+{\footnotesize\ttfamily void free\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}}]{dictionnary }\end{DoxyParamCaption})}
+
+
+
+a function to drestroy and free the memory of a Dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & the dictionary to destroy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_ad3a6f7234a118bd3ba843de6881922b8}\label{dictionary_8h_ad3a6f7234a118bd3ba843de6881922b8}} 
+\index{dictionary.h@{dictionary.h}!printDictionary@{printDictionary}}
+\index{printDictionary@{printDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{printDictionary()}{printDictionary()}}
+{\footnotesize\ttfamily void print\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}}]{dictionnary }\end{DoxyParamCaption})}
+
+
+
+a function to print the content of a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & a dictionary. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_accc134ba42b38ea91ec2bef40b6486cd}\label{dictionary_8h_accc134ba42b38ea91ec2bef40b6486cd}} 
+\index{dictionary.h@{dictionary.h}!readDictionary@{readDictionary}}
+\index{readDictionary@{readDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{readDictionary()}{readDictionary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} read\+Dictionary (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function to read a dictionary from a txt file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & a string representing the file path. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_ac328938abf7fdf9f7c4a1cb2fe924573}\label{dictionary_8h_ac328938abf7fdf9f7c4a1cb2fe924573}} 
+\index{dictionary.h@{dictionary.h}!serializeDictionary@{serializeDictionary}}
+\index{serializeDictionary@{serializeDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{serializeDictionary()}{serializeDictionary()}}
+{\footnotesize\ttfamily void serialize\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}}]{dico,  }\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function to store a dictionary in a txt file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & a dictionary. \\
+\hline
+{\em filepath} & a string representing the file path. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionary_8h_af4d239a05ee72a6a6d518f82ca720d1d}\label{dictionary_8h_af4d239a05ee72a6a6d518f82ca720d1d}} 
+\index{dictionary.h@{dictionary.h}!storeDictionary@{storeDictionary}}
+\index{storeDictionary@{storeDictionary}!dictionary.h@{dictionary.h}}
+\doxysubsubsection{\texorpdfstring{storeDictionary()}{storeDictionary()}}
+{\footnotesize\ttfamily void store\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree,  }\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function to store a dictionary in a txt file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & a dictionary. \\
+\hline
+{\em filepath} & a string representing the file path. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,184 @@
+\hypertarget{utils_8h}{}\doxysection{src/utils.h File Reference}
+\label{utils_8h}\index{src/utils.h@{src/utils.h}}
+
+
+Header of the library containing some useful functions throughout the whole project.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Data\+Structures/dictionary.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_a6a0a9cc907eac2dbef95565f0fa47e43}{read\+File}} (const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function to read the content of a file and return it as a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_a3242519d339ecf5e8b3c9ea8dce9eb01}{write\+String\+To\+File}} (const char $\ast$filepath, char $\ast$string, size\+\_\+t strlength)
+\begin{DoxyCompactList}\small\item\em a function to write a string to a file. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_ae260b4db61489bbf21c86cea4a2ddc06}{char\+To\+Binary}} (char c)
+\begin{DoxyCompactList}\small\item\em a function convert a character to its binary representation. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_a90a71b840f887f84acbfe750fe924a2e}{string\+To\+Binary}} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em a function convert a whole string into its binary representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a54ba2dc4e0f1493964978bf263260012}{string\+File\+To\+Binary}} (const char $\ast$file\+\_\+in, const char $\ast$file\+\_\+out)
+\begin{DoxyCompactList}\small\item\em a function that converts a file into its binary representation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_af4b9cb0d4280c258183bee28f4a25a61}{get\+File\+Length}} (const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function that returns the lenght of a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_ac844f5597798f0b8e91ca0807293cc10}{get\+File\+Line\+Count}} (const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em a function that returns the number of lines in a file. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_ab5797021ba00bccc73aa306e3bbd0e75}{find\+Binary}} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} dict, char c)
+\begin{DoxyCompactList}\small\item\em a function that searches the binary representation of a character in a dictionary. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_8h_a6c96b854cd795b964af28b9c6064027d}\label{utils_8h_a6c96b854cd795b964af28b9c6064027d}} 
+size\+\_\+t {\bfseries find\+Length\+Encoding} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} \mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}, char $\ast$string)
+\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_a7b278819ccb37cfcd058def2fa31e7fd}{encode\+Text\+With\+Dictionary}} (\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}} \mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}, char $\ast$string)
+\begin{DoxyCompactList}\small\item\em a function that encodes a string using a dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing some useful functions throughout the whole project. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_ae260b4db61489bbf21c86cea4a2ddc06}\label{utils_8h_ae260b4db61489bbf21c86cea4a2ddc06}} 
+\index{utils.h@{utils.h}!charToBinary@{charToBinary}}
+\index{charToBinary@{charToBinary}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{charToBinary()}{charToBinary()}}
+{\footnotesize\ttfamily char$\ast$ char\+To\+Binary (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function convert a character to its binary representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a7b278819ccb37cfcd058def2fa31e7fd}\label{utils_8h_a7b278819ccb37cfcd058def2fa31e7fd}} 
+\index{utils.h@{utils.h}!encodeTextWithDictionary@{encodeTextWithDictionary}}
+\index{encodeTextWithDictionary@{encodeTextWithDictionary}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{encodeTextWithDictionary()}{encodeTextWithDictionary()}}
+{\footnotesize\ttfamily char$\ast$ encode\+Text\+With\+Dictionary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}}]{Dictionary,  }\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+a function that encodes a string using a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & an array of characters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_ab5797021ba00bccc73aa306e3bbd0e75}\label{utils_8h_ab5797021ba00bccc73aa306e3bbd0e75}} 
+\index{utils.h@{utils.h}!findBinary@{findBinary}}
+\index{findBinary@{findBinary}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{findBinary()}{findBinary()}}
+{\footnotesize\ttfamily char$\ast$ find\+Binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dictionary_8h_a75d0a1670704923e348986686c3714f9}{Dictionary}}}]{dict,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function that searches the binary representation of a character in a dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict} & a dictionary. \\
+\hline
+{\em c} & a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_af4b9cb0d4280c258183bee28f4a25a61}\label{utils_8h_af4b9cb0d4280c258183bee28f4a25a61}} 
+\index{utils.h@{utils.h}!getFileLength@{getFileLength}}
+\index{getFileLength@{getFileLength}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{getFileLength()}{getFileLength()}}
+{\footnotesize\ttfamily int get\+File\+Length (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function that returns the lenght of a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & the path to the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_ac844f5597798f0b8e91ca0807293cc10}\label{utils_8h_ac844f5597798f0b8e91ca0807293cc10}} 
+\index{utils.h@{utils.h}!getFileLineCount@{getFileLineCount}}
+\index{getFileLineCount@{getFileLineCount}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{getFileLineCount()}{getFileLineCount()}}
+{\footnotesize\ttfamily int get\+File\+Line\+Count (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function that returns the number of lines in a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & the path to the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a6a0a9cc907eac2dbef95565f0fa47e43}\label{utils_8h_a6a0a9cc907eac2dbef95565f0fa47e43}} 
+\index{utils.h@{utils.h}!readFile@{readFile}}
+\index{readFile@{readFile}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily char$\ast$ read\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})}
+
+
+
+a function to read the content of a file and return it as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & the path to the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a54ba2dc4e0f1493964978bf263260012}\label{utils_8h_a54ba2dc4e0f1493964978bf263260012}} 
+\index{utils.h@{utils.h}!stringFileToBinary@{stringFileToBinary}}
+\index{stringFileToBinary@{stringFileToBinary}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{stringFileToBinary()}{stringFileToBinary()}}
+{\footnotesize\ttfamily void string\+File\+To\+Binary (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+\_\+in,  }\item[{const char $\ast$}]{file\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+a function that converts a file into its binary representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+in} & the path to the input file. \\
+\hline
+{\em file\+\_\+out} & the path to the output file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a90a71b840f887f84acbfe750fe924a2e}\label{utils_8h_a90a71b840f887f84acbfe750fe924a2e}} 
+\index{utils.h@{utils.h}!stringToBinary@{stringToBinary}}
+\index{stringToBinary@{stringToBinary}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{stringToBinary()}{stringToBinary()}}
+{\footnotesize\ttfamily char$\ast$ string\+To\+Binary (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+a function convert a whole string into its binary representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the array of characters. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a3242519d339ecf5e8b3c9ea8dce9eb01}\label{utils_8h_a3242519d339ecf5e8b3c9ea8dce9eb01}} 
+\index{utils.h@{utils.h}!writeStringToFile@{writeStringToFile}}
+\index{writeStringToFile@{writeStringToFile}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{writeStringToFile()}{writeStringToFile()}}
+{\footnotesize\ttfamily int write\+String\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath,  }\item[{char $\ast$}]{string,  }\item[{size\+\_\+t}]{strlength }\end{DoxyParamCaption})}
+
+
+
+a function to write a string to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & the path to the file. \\
+\hline
+{\em string} & the string to write. \\
+\hline
+{\em strlength} & the length of the string. \\
+\hline
+\end{DoxyParams}

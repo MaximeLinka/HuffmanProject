@@ -1,0 +1,103 @@
+\hypertarget{stack_8h}{}\doxysection{src/\+Data\+Structures/stack.h File Reference}
+\label{stack_8h}\index{src/DataStructures/stack.h@{src/DataStructures/stack.h}}
+
+
+Header of the library containing the stack.  
+
+
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_stack}{Stack}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stack_8h_a2a5ce401b4311fb9f9e5c406bcb9a36e}\label{stack_8h_a2a5ce401b4311fb9f9e5c406bcb9a36e}} 
+typedef struct \mbox{\hyperlink{struct_stack}{Stack}} \mbox{\hyperlink{stack_8h_a2a5ce401b4311fb9f9e5c406bcb9a36e}{Stack}}
+\begin{DoxyCompactList}\small\item\em a stack of int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stack_8h_a71790ed3a8033ae4e07e4820f6f22fb7}\label{stack_8h_a71790ed3a8033ae4e07e4820f6f22fb7}} 
+\mbox{\hyperlink{struct_stack}{Stack}} $\ast$ \mbox{\hyperlink{stack_8h_a71790ed3a8033ae4e07e4820f6f22fb7}{create\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em a function to create a \mbox{\hyperlink{struct_stack}{Stack}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8h_a63f5a2ae8b1e3c27033e3f7a83cfe82c}{free\+Stack}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function to destroy and free the memory of a stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8h_aaec97dfa499d7c26907efaa38b975b12}{is\+Stack\+Empty}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function that returs 1 if the stack is empty and 1 otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8h_a1133ecf0689fe6f9a1353537836ed275}{stack\+Push}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$s, int value)
+\begin{DoxyCompactList}\small\item\em a function that pushes an int into a stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8h_a42b5fbf4402eb27fcb8a02637175a835}{stack\+Pop}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function that pops a stack, it returns an int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing the stack. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8h_a63f5a2ae8b1e3c27033e3f7a83cfe82c}\label{stack_8h_a63f5a2ae8b1e3c27033e3f7a83cfe82c}} 
+\index{stack.h@{stack.h}!freeStack@{freeStack}}
+\index{freeStack@{freeStack}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{freeStack()}{freeStack()}}
+{\footnotesize\ttfamily void free\+Stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function to destroy and free the memory of a stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_aaec97dfa499d7c26907efaa38b975b12}\label{stack_8h_aaec97dfa499d7c26907efaa38b975b12}} 
+\index{stack.h@{stack.h}!isStackEmpty@{isStackEmpty}}
+\index{isStackEmpty@{isStackEmpty}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{isStackEmpty()}{isStackEmpty()}}
+{\footnotesize\ttfamily int is\+Stack\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function that returs 1 if the stack is empty and 1 otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a42b5fbf4402eb27fcb8a02637175a835}\label{stack_8h_a42b5fbf4402eb27fcb8a02637175a835}} 
+\index{stack.h@{stack.h}!stackPop@{stackPop}}
+\index{stackPop@{stackPop}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{stackPop()}{stackPop()}}
+{\footnotesize\ttfamily int stack\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function that pops a stack, it returns an int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_a1133ecf0689fe6f9a1353537836ed275}\label{stack_8h_a1133ecf0689fe6f9a1353537836ed275}} 
+\index{stack.h@{stack.h}!stackPush@{stackPush}}
+\index{stackPush@{stackPush}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{stackPush()}{stackPush()}}
+{\footnotesize\ttfamily void stack\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{s,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+a function that pushes an int into a stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a stack. \\
+\hline
+{\em value} & an int. \\
+\hline
+\end{DoxyParams}

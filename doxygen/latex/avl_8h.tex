@@ -1,0 +1,195 @@
+\hypertarget{avl_8h}{}\doxysection{src/\+Data\+Structures/avl.h File Reference}
+\label{avl_8h}\index{src/DataStructures/avl.h@{src/DataStructures/avl.h}}
+
+
+Header of the library containing the avl tree.  
+
+
+{\ttfamily \#include \char`\"{}huffman\+\_\+tree.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{avl_8h_ad754c893e15c6eabe296ac97a15a25ed}{right\+\_\+rotation}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function to perform a right rotation on an avl tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{avl_8h_aa75aa6c24efabd61941f07cf8f9414e1}{left\+\_\+rotation}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function to perform a left rotation on an avl tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{avl_8h_ac4ee01aa986c9dc644ec2ca7e6d54c9a}{tree\+\_\+depth}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function that returns the depth of a tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{avl_8h_ad01f5aee363edac923ff2293e030a553}{Create\+Avl}} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em a function to create an avl tree from a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{avl_8h_a6624433d277c1d13ed6c056fd248a935}{bf}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function that returns the balance factor of a tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{avl_8h_aa9facee6c785e63ed78822574b04d2df}{balance}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function that balances an binary search tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{avl_8h_a2380e13d8a5432d2438bdfeff75ed077}{add\+\_\+node\+\_\+\+A\+VL}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tree, char val)
+\begin{DoxyCompactList}\small\item\em a function to add a a character to an avl. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{avl_8h_aa9fb093eabbba803b35158b349204704}{Avl\+To\+Array}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$my\+\_\+array, \mbox{\hyperlink{struct_node}{Node}} $\ast$tree, int $\ast$meter)
+\begin{DoxyCompactList}\small\item\em a function to transform an avl to an array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{avl_8h_a1207ba8584752fb4c908d9161a466d49}{Trees\+Count\+Nodes}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em a function that returns the number of nodes in a tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{avl_8h_aabfe2ea1cb74e1e53c647a6531a1820d}{add\+\_\+\+B\+ST}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tree, char val)
+\begin{DoxyCompactList}\small\item\em a function that adds a character to a Binary search tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing the avl tree. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{avl_8h_aabfe2ea1cb74e1e53c647a6531a1820d}\label{avl_8h_aabfe2ea1cb74e1e53c647a6531a1820d}} 
+\index{avl.h@{avl.h}!add\_BST@{add\_BST}}
+\index{add\_BST@{add\_BST}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{add\_BST()}{add\_BST()}}
+{\footnotesize\ttfamily void add\+\_\+\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tree,  }\item[{char}]{val }\end{DoxyParamCaption})}
+
+
+
+a function that adds a character to a Binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the adress of a pointer to an avl tree. \\
+\hline
+{\em val} & the character to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_a2380e13d8a5432d2438bdfeff75ed077}\label{avl_8h_a2380e13d8a5432d2438bdfeff75ed077}} 
+\index{avl.h@{avl.h}!add\_node\_AVL@{add\_node\_AVL}}
+\index{add\_node\_AVL@{add\_node\_AVL}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{add\_node\_AVL()}{add\_node\_AVL()}}
+{\footnotesize\ttfamily void add\+\_\+node\+\_\+\+A\+VL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tree,  }\item[{char}]{val }\end{DoxyParamCaption})}
+
+
+
+a function to add a a character to an avl. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the adress of a pointer to an avl tree. \\
+\hline
+{\em val} & the character to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_aa9fb093eabbba803b35158b349204704}\label{avl_8h_aa9fb093eabbba803b35158b349204704}} 
+\index{avl.h@{avl.h}!AvlToArray@{AvlToArray}}
+\index{AvlToArray@{AvlToArray}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{AvlToArray()}{AvlToArray()}}
+{\footnotesize\ttfamily void Avl\+To\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{my\+\_\+array,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{int $\ast$}]{meter }\end{DoxyParamCaption})}
+
+
+
+a function to transform an avl to an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+\_\+array} & the array of nodes in which the tree is going to be converted. \\
+\hline
+{\em tree} & a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_aa9facee6c785e63ed78822574b04d2df}\label{avl_8h_aa9facee6c785e63ed78822574b04d2df}} 
+\index{avl.h@{avl.h}!balance@{balance}}
+\index{balance@{balance}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{balance()}{balance()}}
+{\footnotesize\ttfamily void balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that balances an binary search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the adress of a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_a6624433d277c1d13ed6c056fd248a935}\label{avl_8h_a6624433d277c1d13ed6c056fd248a935}} 
+\index{avl.h@{avl.h}!bf@{bf}}
+\index{bf@{bf}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{bf()}{bf()}}
+{\footnotesize\ttfamily int bf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that returns the balance factor of a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_ad01f5aee363edac923ff2293e030a553}\label{avl_8h_ad01f5aee363edac923ff2293e030a553}} 
+\index{avl.h@{avl.h}!CreateAvl@{CreateAvl}}
+\index{CreateAvl@{CreateAvl}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{CreateAvl()}{CreateAvl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ Create\+Avl (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+a function to create an avl tree from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & a c string. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_aa75aa6c24efabd61941f07cf8f9414e1}\label{avl_8h_aa75aa6c24efabd61941f07cf8f9414e1}} 
+\index{avl.h@{avl.h}!left\_rotation@{left\_rotation}}
+\index{left\_rotation@{left\_rotation}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{left\_rotation()}{left\_rotation()}}
+{\footnotesize\ttfamily void left\+\_\+rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to perform a left rotation on an avl tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the adress of a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_ad754c893e15c6eabe296ac97a15a25ed}\label{avl_8h_ad754c893e15c6eabe296ac97a15a25ed}} 
+\index{avl.h@{avl.h}!right\_rotation@{right\_rotation}}
+\index{right\_rotation@{right\_rotation}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{right\_rotation()}{right\_rotation()}}
+{\footnotesize\ttfamily void right\+\_\+rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to perform a right rotation on an avl tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the adress of a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_ac4ee01aa986c9dc644ec2ca7e6d54c9a}\label{avl_8h_ac4ee01aa986c9dc644ec2ca7e6d54c9a}} 
+\index{avl.h@{avl.h}!tree\_depth@{tree\_depth}}
+\index{tree\_depth@{tree\_depth}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{tree\_depth()}{tree\_depth()}}
+{\footnotesize\ttfamily int tree\+\_\+depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that returns the depth of a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{avl_8h_a1207ba8584752fb4c908d9161a466d49}\label{avl_8h_a1207ba8584752fb4c908d9161a466d49}} 
+\index{avl.h@{avl.h}!TreesCountNodes@{TreesCountNodes}}
+\index{TreesCountNodes@{TreesCountNodes}!avl.h@{avl.h}}
+\doxysubsubsection{\texorpdfstring{TreesCountNodes()}{TreesCountNodes()}}
+{\footnotesize\ttfamily int Trees\+Count\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that returns the number of nodes in a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a pointer to an avl tree. \\
+\hline
+\end{DoxyParams}

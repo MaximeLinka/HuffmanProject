@@ -1,0 +1,59 @@
+\hypertarget{coding_8h}{}\doxysection{src/coding.h File Reference}
+\label{coding_8h}\index{src/coding.h@{src/coding.h}}
+
+
+Header of the library containing some huffman coding functions.  
+
+
+{\ttfamily \#include \char`\"{}Data\+Structures/dictionary.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{coding_8h_a24aa8cb92ce27c35725d648119b92337}{encode\+Text}} (char $\ast$string, const char $\ast$dicopath)
+\begin{DoxyCompactList}\small\item\em a function that converts a string into its huffman code and writes the dictionary to the given filepath. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{coding_8h_a438d3219a5a4d143cdfdddd9d3418a8d}{compress\+File}} (const char $\ast$input, const char $\ast$output, const char $\ast$dico)
+\begin{DoxyCompactList}\small\item\em a function that compresses a file using the huffman coding technique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing some huffman coding functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{coding_8h_a438d3219a5a4d143cdfdddd9d3418a8d}\label{coding_8h_a438d3219a5a4d143cdfdddd9d3418a8d}} 
+\index{coding.h@{coding.h}!compressFile@{compressFile}}
+\index{compressFile@{compressFile}!coding.h@{coding.h}}
+\doxysubsubsection{\texorpdfstring{compressFile()}{compressFile()}}
+{\footnotesize\ttfamily void compress\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{const char $\ast$}]{output,  }\item[{const char $\ast$}]{dico }\end{DoxyParamCaption})}
+
+
+
+a function that compresses a file using the huffman coding technique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & the path to the input file. \\
+\hline
+{\em output} & the path to the output file. \\
+\hline
+{\em dico} & the path to the dictionary file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{coding_8h_a24aa8cb92ce27c35725d648119b92337}\label{coding_8h_a24aa8cb92ce27c35725d648119b92337}} 
+\index{coding.h@{coding.h}!encodeText@{encodeText}}
+\index{encodeText@{encodeText}!coding.h@{coding.h}}
+\doxysubsubsection{\texorpdfstring{encodeText()}{encodeText()}}
+{\footnotesize\ttfamily char$\ast$ encode\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{const char $\ast$}]{dicopath }\end{DoxyParamCaption})}
+
+
+
+a function that converts a string into its huffman code and writes the dictionary to the given filepath. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & an array of characters. \\
+\hline
+{\em dicopath} & a string representing the path for the dicionary to be written. \\
+\hline
+\end{DoxyParams}

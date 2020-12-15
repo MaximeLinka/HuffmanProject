@@ -1,0 +1,247 @@
+\hypertarget{linkedlist_8h}{}\doxysection{src/\+Data\+Structures/linkedlist.h File Reference}
+\label{linkedlist_8h}\index{src/DataStructures/linkedlist.h@{src/DataStructures/linkedlist.h}}
+
+
+Header of the library containing the Occurence List.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_element}{Element}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{linkedlist_8h_aed98d73ee26a4beb54eaea48f35f8694}\label{linkedlist_8h_aed98d73ee26a4beb54eaea48f35f8694}} 
+typedef struct \mbox{\hyperlink{struct_element}{Element}} \mbox{\hyperlink{linkedlist_8h_aed98d73ee26a4beb54eaea48f35f8694}{Element}}
+\begin{DoxyCompactList}\small\item\em a linked list element. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}\label{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}} 
+typedef \mbox{\hyperlink{struct_element}{Element}} $\ast$ \mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}
+\begin{DoxyCompactList}\small\item\em a nickname for Element$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_element}{Element}} $\ast$ \mbox{\hyperlink{linkedlist_8h_a32aaf572f0363b605f2050159c64f25d}{create\+Element}} (char c)
+\begin{DoxyCompactList}\small\item\em a function to create an element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_ae74b695e36647e2bed736e89ad16d316}{free\+Occurence\+List}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function to destroy and free the memory of an occurence list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a62a12b8b1b4183ff318a1ace78575126}{print\+Occurence\+List}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function to print the content of an occurence list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{linkedlist_8h_a3816850597c53d0ddffd33ef5b5c24ff}{contains\+Element}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l, char c)
+\begin{DoxyCompactList}\small\item\em a function that returns 0 if the character is not in the occurence list, 1 if it is. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{linkedlist_8h_a5908bd053c9e4e65f898293a2f45a52b}{get\+Occurence\+List\+Size}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function that returns the size of an occurence list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{linkedlist_8h_a35f3ce29eac4a33e6b78f4c20a2e7944}{get\+Occurence\+List\+Sum}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function that returns the sum of all occurences in an occurence list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_af9a0a469955f965f15a31a95fb3eaa32}{append\+Occurence\+List}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} $\ast$l, char c)
+\begin{DoxyCompactList}\small\item\em a function that adds a character in an occurence list, the occurence of that character is set to 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a4592e927c30cd10df13a15770cbdeaba}{remove\+Element}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l, char c)
+\begin{DoxyCompactList}\small\item\em a function that removes a character from an occurence list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_ac1aa5cf96a2aeb170ec9f5ef741c8d50}{sort\+Occurence\+List\+By\+Occurence\+Descendent}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em a function that sorts an occurence list by occurence and in a descendant manner. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{linkedlist_8h_aacdb5aedf3afd3aeac3174e85fd2ade4}{is\+Occurence\+List\+Sorted}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function that checks if an occurence list is sorted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element}{Element}} $\ast$ \mbox{\hyperlink{linkedlist_8h_a39f4b69413677ee06443b4c736832f20}{min\+Occurence\+List}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function that returns the minimum of an occurence list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} \mbox{\hyperlink{linkedlist_8h_a8f737a88036ace92f53734de71cdaa7c}{create\+Occurence\+List}} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em a function that creates an occurence list from a string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{linkedlist_8h_af43e16e74d152cba1f7e2a44a2b2e50c}\label{linkedlist_8h_af43e16e74d152cba1f7e2a44a2b2e50c}} 
+void {\bfseries remove\+\_\+list} (\mbox{\hyperlink{struct_element}{Element}} $\ast$$\ast$l, \mbox{\hyperlink{struct_element}{Element}} $\ast$disposable)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing the Occurence List. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{linkedlist_8h_af9a0a469955f965f15a31a95fb3eaa32}\label{linkedlist_8h_af9a0a469955f965f15a31a95fb3eaa32}} 
+\index{linkedlist.h@{linkedlist.h}!appendOccurenceList@{appendOccurenceList}}
+\index{appendOccurenceList@{appendOccurenceList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{appendOccurenceList()}{appendOccurenceList()}}
+{\footnotesize\ttfamily void append\+Occurence\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} $\ast$}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function that adds a character in an occurence list, the occurence of that character is set to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+{\em c} & a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a3816850597c53d0ddffd33ef5b5c24ff}\label{linkedlist_8h_a3816850597c53d0ddffd33ef5b5c24ff}} 
+\index{linkedlist.h@{linkedlist.h}!containsElement@{containsElement}}
+\index{containsElement@{containsElement}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{containsElement()}{containsElement()}}
+{\footnotesize\ttfamily int contains\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function that returns 0 if the character is not in the occurence list, 1 if it is. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+{\em c} & a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a32aaf572f0363b605f2050159c64f25d}\label{linkedlist_8h_a32aaf572f0363b605f2050159c64f25d}} 
+\index{linkedlist.h@{linkedlist.h}!createElement@{createElement}}
+\index{createElement@{createElement}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{createElement()}{createElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}}$\ast$ create\+Element (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function to create an element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a8f737a88036ace92f53734de71cdaa7c}\label{linkedlist_8h_a8f737a88036ace92f53734de71cdaa7c}} 
+\index{linkedlist.h@{linkedlist.h}!createOccurenceList@{createOccurenceList}}
+\index{createOccurenceList@{createOccurenceList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{createOccurenceList()}{createOccurenceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} create\+Occurence\+List (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+a function that creates an occurence list from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & an array of characters (string). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_ae74b695e36647e2bed736e89ad16d316}\label{linkedlist_8h_ae74b695e36647e2bed736e89ad16d316}} 
+\index{linkedlist.h@{linkedlist.h}!freeOccurenceList@{freeOccurenceList}}
+\index{freeOccurenceList@{freeOccurenceList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{freeOccurenceList()}{freeOccurenceList()}}
+{\footnotesize\ttfamily void free\+Occurence\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function to destroy and free the memory of an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a5908bd053c9e4e65f898293a2f45a52b}\label{linkedlist_8h_a5908bd053c9e4e65f898293a2f45a52b}} 
+\index{linkedlist.h@{linkedlist.h}!getOccurenceListSize@{getOccurenceListSize}}
+\index{getOccurenceListSize@{getOccurenceListSize}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{getOccurenceListSize()}{getOccurenceListSize()}}
+{\footnotesize\ttfamily int get\+Occurence\+List\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function that returns the size of an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a35f3ce29eac4a33e6b78f4c20a2e7944}\label{linkedlist_8h_a35f3ce29eac4a33e6b78f4c20a2e7944}} 
+\index{linkedlist.h@{linkedlist.h}!getOccurenceListSum@{getOccurenceListSum}}
+\index{getOccurenceListSum@{getOccurenceListSum}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{getOccurenceListSum()}{getOccurenceListSum()}}
+{\footnotesize\ttfamily int get\+Occurence\+List\+Sum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function that returns the sum of all occurences in an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_aacdb5aedf3afd3aeac3174e85fd2ade4}\label{linkedlist_8h_aacdb5aedf3afd3aeac3174e85fd2ade4}} 
+\index{linkedlist.h@{linkedlist.h}!isOccurenceListSorted@{isOccurenceListSorted}}
+\index{isOccurenceListSorted@{isOccurenceListSorted}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{isOccurenceListSorted()}{isOccurenceListSorted()}}
+{\footnotesize\ttfamily int is\+Occurence\+List\+Sorted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function that checks if an occurence list is sorted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a39f4b69413677ee06443b4c736832f20}\label{linkedlist_8h_a39f4b69413677ee06443b4c736832f20}} 
+\index{linkedlist.h@{linkedlist.h}!minOccurenceList@{minOccurenceList}}
+\index{minOccurenceList@{minOccurenceList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{minOccurenceList()}{minOccurenceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}}$\ast$ min\+Occurence\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function that returns the minimum of an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a62a12b8b1b4183ff318a1ace78575126}\label{linkedlist_8h_a62a12b8b1b4183ff318a1ace78575126}} 
+\index{linkedlist.h@{linkedlist.h}!printOccurenceList@{printOccurenceList}}
+\index{printOccurenceList@{printOccurenceList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{printOccurenceList()}{printOccurenceList()}}
+{\footnotesize\ttfamily void print\+Occurence\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function to print the content of an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a4592e927c30cd10df13a15770cbdeaba}\label{linkedlist_8h_a4592e927c30cd10df13a15770cbdeaba}} 
+\index{linkedlist.h@{linkedlist.h}!removeElement@{removeElement}}
+\index{removeElement@{removeElement}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{removeElement()}{removeElement()}}
+{\footnotesize\ttfamily void remove\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function that removes a character from an occurence list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+{\em c} & a character. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_ac1aa5cf96a2aeb170ec9f5ef741c8d50}\label{linkedlist_8h_ac1aa5cf96a2aeb170ec9f5ef741c8d50}} 
+\index{linkedlist.h@{linkedlist.h}!sortOccurenceListByOccurenceDescendent@{sortOccurenceListByOccurenceDescendent}}
+\index{sortOccurenceListByOccurenceDescendent@{sortOccurenceListByOccurenceDescendent}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{sortOccurenceListByOccurenceDescendent()}{sortOccurenceListByOccurenceDescendent()}}
+{\footnotesize\ttfamily void sort\+Occurence\+List\+By\+Occurence\+Descendent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+a function that sorts an occurence list by occurence and in a descendant manner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}

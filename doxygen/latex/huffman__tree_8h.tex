@@ -1,0 +1,295 @@
+\hypertarget{huffman__tree_8h}{}\doxysection{src/\+Data\+Structures/huffman\+\_\+tree.h File Reference}
+\label{huffman__tree_8h}\index{src/DataStructures/huffman\_tree.h@{src/DataStructures/huffman\_tree.h}}
+
+
+Header of the library containing the huffman tree.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Data\+Structures/linkedlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Data\+Structures/stack.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}}
+\item 
+struct \mbox{\hyperlink{struct_node_element}{Node\+Element}}
+\item 
+struct \mbox{\hyperlink{struct_node_stack}{Node\+Stack}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{huffman__tree_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}\label{huffman__tree_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}} 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{huffman__tree_8h_a9cf2efdb4ec5c59749c71c81ce1cf726}{Node}}
+\begin{DoxyCompactList}\small\item\em a tree node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}\label{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}} 
+typedef \mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}
+\begin{DoxyCompactList}\small\item\em a nickname for Node$\ast$. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__tree_8h_a056580b9a5f9d93f021425748d6fe0dc}\label{huffman__tree_8h_a056580b9a5f9d93f021425748d6fe0dc}} 
+typedef struct \mbox{\hyperlink{struct_node_element}{Node\+Element}} \mbox{\hyperlink{huffman__tree_8h_a056580b9a5f9d93f021425748d6fe0dc}{Node\+Element}}
+\begin{DoxyCompactList}\small\item\em an element of a Linked\+List of Nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__tree_8h_a7558128f6d86b8cb8a5c9f91aee8d01b}\label{huffman__tree_8h_a7558128f6d86b8cb8a5c9f91aee8d01b}} 
+typedef \mbox{\hyperlink{struct_node_element}{Node\+Element}} $\ast$ {\bfseries Node\+Linked\+List}
+\item 
+\mbox{\Hypertarget{huffman__tree_8h_a3fbcdb70a024704aa66e4d4070a5b188}\label{huffman__tree_8h_a3fbcdb70a024704aa66e4d4070a5b188}} 
+typedef struct \mbox{\hyperlink{struct_node_stack}{Node\+Stack}} \mbox{\hyperlink{huffman__tree_8h_a3fbcdb70a024704aa66e4d4070a5b188}{Node\+Stack}}
+\begin{DoxyCompactList}\small\item\em a \mbox{\hyperlink{struct_stack}{Stack}} of nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__tree_8h_aed3a0421b392b8861259db4ea3ada5f6}{create\+Node}} (int value, char c)
+\begin{DoxyCompactList}\small\item\em a function to create a \mbox{\hyperlink{struct_node}{Node}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__tree_8h_ad6e8a1650112babadfe97ed07618f7e3}{create\+Link}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$current\+\_\+node, \mbox{\hyperlink{struct_node}{Node}} $\ast$leaf)
+\begin{DoxyCompactList}\small\item\em a function to create a huffman tree link. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node_element}{Node\+Linked\+List}} \mbox{\hyperlink{huffman__tree_8h_a7247ce7f8c2ab3a6f39b87a06d62e589}{occurence\+List\+To\+Node\+List}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function to create list of nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} \mbox{\hyperlink{huffman__tree_8h_ac5eef02e8fd389a101ab408a8ed6b029}{build\+Huffman\+Tree}} (\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}} l)
+\begin{DoxyCompactList}\small\item\em a function to create the huffman tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_a53536915232da734c5cb4e9ca25557f8}{print\+Huffman\+Tree\+Preorder}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function to print a huffman tree to the console in a preorder way. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_ac9c375f9db517707a47124b0255df5e1}{print\+Huffman\+Tree}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function to print a huffman tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_aa6422d3beb68aa60c38d5c7e413858ca}{free\+Huffman\+Tree}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function to destroy and free the memory of a huffman tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__tree_8h_a6c88e5bdc05836012f09c7382632e2e0}{get\+Huffman\+Tree\+Height}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function that returns the height of a huffman tree. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__tree_8h_ab317da5c8cab5093d75a4bf146d7d7b8}{get\+Huffman\+Tree\+Leaf\+Count}} (\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} tree)
+\begin{DoxyCompactList}\small\item\em a function that returns the number of leafs in a huffman tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_a6a6ceaed4a5d49f63406166ada916d46}{free\+Node\+Linked\+List}} (\mbox{\hyperlink{struct_node_element}{Node\+Linked\+List}} list)
+\begin{DoxyCompactList}\small\item\em a function to destroy and free the memory of a list of nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__tree_8h_a57819fa04965a1da4901add2011af9a3}\label{huffman__tree_8h_a57819fa04965a1da4901add2011af9a3}} 
+\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$ \mbox{\hyperlink{huffman__tree_8h_a57819fa04965a1da4901add2011af9a3}{create\+Node\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em a function to create a node stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_aaffae622191414aa6402ee2bede90e28}{free\+Node\+Stack}} (\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function to destroy and free the memory of a node stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__tree_8h_ac5fbf1c3e1b13b2f22c5edcb7dea7a86}{is\+Node\+Stack\+Empty}} (\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function that returns 1 if the stack is empty, 0 otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__tree_8h_aa762d23c1981e8c013294276b2f73dd6}{node\+Stack\+Push}} (\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$s, \mbox{\hyperlink{struct_node}{Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em a function to push a node in a node stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__tree_8h_a0d8f365c93c406455d47ebb6810b5b06}{node\+Stack\+Pop}} (\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em a function to a node stack, returns a node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header of the library containing the huffman tree. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{huffman__tree_8h_ac5eef02e8fd389a101ab408a8ed6b029}\label{huffman__tree_8h_ac5eef02e8fd389a101ab408a8ed6b029}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!buildHuffmanTree@{buildHuffmanTree}}
+\index{buildHuffmanTree@{buildHuffmanTree}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{buildHuffmanTree()}{buildHuffmanTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}} build\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function to create the huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_ad6e8a1650112babadfe97ed07618f7e3}\label{huffman__tree_8h_ad6e8a1650112babadfe97ed07618f7e3}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!createLink@{createLink}}
+\index{createLink@{createLink}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{createLink()}{createLink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+Link (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{current\+\_\+node,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{leaf }\end{DoxyParamCaption})}
+
+
+
+a function to create a huffman tree link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+node} & a \mbox{\hyperlink{struct_node}{Node}}. \\
+\hline
+{\em left} & another node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_aed3a0421b392b8861259db4ea3ada5f6}\label{huffman__tree_8h_aed3a0421b392b8861259db4ea3ada5f6}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!createNode@{createNode}}
+\index{createNode@{createNode}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{createNode()}{createNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+Node (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+a function to create a \mbox{\hyperlink{struct_node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a character. \\
+\hline
+{\em value} & an int . \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_aa6422d3beb68aa60c38d5c7e413858ca}\label{huffman__tree_8h_aa6422d3beb68aa60c38d5c7e413858ca}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!freeHuffmanTree@{freeHuffmanTree}}
+\index{freeHuffmanTree@{freeHuffmanTree}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{freeHuffmanTree()}{freeHuffmanTree()}}
+{\footnotesize\ttfamily void free\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to destroy and free the memory of a huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_a6a6ceaed4a5d49f63406166ada916d46}\label{huffman__tree_8h_a6a6ceaed4a5d49f63406166ada916d46}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!freeNodeLinkedList@{freeNodeLinkedList}}
+\index{freeNodeLinkedList@{freeNodeLinkedList}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{freeNodeLinkedList()}{freeNodeLinkedList()}}
+{\footnotesize\ttfamily void free\+Node\+Linked\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_element}{Node\+Linked\+List}}}]{list }\end{DoxyParamCaption})}
+
+
+
+a function to destroy and free the memory of a list of nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & a list of nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_aaffae622191414aa6402ee2bede90e28}\label{huffman__tree_8h_aaffae622191414aa6402ee2bede90e28}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!freeNodeStack@{freeNodeStack}}
+\index{freeNodeStack@{freeNodeStack}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{freeNodeStack()}{freeNodeStack()}}
+{\footnotesize\ttfamily void free\+Node\+Stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function to destroy and free the memory of a node stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a node stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_a6c88e5bdc05836012f09c7382632e2e0}\label{huffman__tree_8h_a6c88e5bdc05836012f09c7382632e2e0}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!getHuffmanTreeHeight@{getHuffmanTreeHeight}}
+\index{getHuffmanTreeHeight@{getHuffmanTreeHeight}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{getHuffmanTreeHeight()}{getHuffmanTreeHeight()}}
+{\footnotesize\ttfamily int get\+Huffman\+Tree\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that returns the height of a huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_ab317da5c8cab5093d75a4bf146d7d7b8}\label{huffman__tree_8h_ab317da5c8cab5093d75a4bf146d7d7b8}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!getHuffmanTreeLeafCount@{getHuffmanTreeLeafCount}}
+\index{getHuffmanTreeLeafCount@{getHuffmanTreeLeafCount}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{getHuffmanTreeLeafCount()}{getHuffmanTreeLeafCount()}}
+{\footnotesize\ttfamily int get\+Huffman\+Tree\+Leaf\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function that returns the number of leafs in a huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_ac5fbf1c3e1b13b2f22c5edcb7dea7a86}\label{huffman__tree_8h_ac5fbf1c3e1b13b2f22c5edcb7dea7a86}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!isNodeStackEmpty@{isNodeStackEmpty}}
+\index{isNodeStackEmpty@{isNodeStackEmpty}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{isNodeStackEmpty()}{isNodeStackEmpty()}}
+{\footnotesize\ttfamily int is\+Node\+Stack\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function that returns 1 if the stack is empty, 0 otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a stack of nodes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_a0d8f365c93c406455d47ebb6810b5b06}\label{huffman__tree_8h_a0d8f365c93c406455d47ebb6810b5b06}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!nodeStackPop@{nodeStackPop}}
+\index{nodeStackPop@{nodeStackPop}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{nodeStackPop()}{nodeStackPop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ node\+Stack\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+a function to a node stack, returns a node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a node stack. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_aa762d23c1981e8c013294276b2f73dd6}\label{huffman__tree_8h_aa762d23c1981e8c013294276b2f73dd6}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!nodeStackPush@{nodeStackPush}}
+\index{nodeStackPush@{nodeStackPush}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{nodeStackPush()}{nodeStackPush()}}
+{\footnotesize\ttfamily void node\+Stack\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_stack}{Node\+Stack}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+a function to push a node in a node stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & a node stack. \\
+\hline
+{\em node} & a node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_a7247ce7f8c2ab3a6f39b87a06d62e589}\label{huffman__tree_8h_a7247ce7f8c2ab3a6f39b87a06d62e589}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!occurenceListToNodeList@{occurenceListToNodeList}}
+\index{occurenceListToNodeList@{occurenceListToNodeList}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{occurenceListToNodeList()}{occurenceListToNodeList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node_element}{Node\+Linked\+List}} occurence\+List\+To\+Node\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{linkedlist_8h_a38364d3dde600e8fe5ab2d43b5d6abfd}{Occurence\+List}}}]{l }\end{DoxyParamCaption})}
+
+
+
+a function to create list of nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & an occurence list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_ac9c375f9db517707a47124b0255df5e1}\label{huffman__tree_8h_ac9c375f9db517707a47124b0255df5e1}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!printHuffmanTree@{printHuffmanTree}}
+\index{printHuffmanTree@{printHuffmanTree}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{printHuffmanTree()}{printHuffmanTree()}}
+{\footnotesize\ttfamily void print\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to print a huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__tree_8h_a53536915232da734c5cb4e9ca25557f8}\label{huffman__tree_8h_a53536915232da734c5cb4e9ca25557f8}} 
+\index{huffman\_tree.h@{huffman\_tree.h}!printHuffmanTreePreorder@{printHuffmanTreePreorder}}
+\index{printHuffmanTreePreorder@{printHuffmanTreePreorder}!huffman\_tree.h@{huffman\_tree.h}}
+\doxysubsubsection{\texorpdfstring{printHuffmanTreePreorder()}{printHuffmanTreePreorder()}}
+{\footnotesize\ttfamily void print\+Huffman\+Tree\+Preorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{huffman__tree_8h_a72dd3ee2ab7599b26f498c5661046058}{Huffman\+Tree}}}]{tree }\end{DoxyParamCaption})}
+
+
+
+a function to print a huffman tree to the console in a preorder way. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & a huffman tree. \\
+\hline
+\end{DoxyParams}
